@@ -1,0 +1,77 @@
+body {
+    background: var(--Compl-Black) !important;
+}
+
+.Header {
+    background: #444444;
+    color: #ffffff;
+    box-shadow: 0 3px 5px #353535;
+}
+
+.AboutSeenForm {
+    color: #1fb2ff;
+}
+
+.AboutFormSettings a {
+    color: #ffffff;
+}
+
+.ContainerTitle {
+    color: var(--Compl-GreenLight);
+}
+
+.CotnainerRecord {
+    background: #393939;
+    box-shadow: 0 6px 17px rgba(34, 34, 34, 0.7);
+}
+
+.InfoRecord {
+    background: #383838;
+    box-shadow: none;
+}
+
+.InfoRecord p{
+    color: #f3f3f3;
+}
+
+.CotnainerRecords > div {
+    background: #393939;
+    box-shadow: 0 6px 17px rgba(34, 34, 34, 0.7);
+}
+
+.Record:hover {
+    background: #323232;
+}
+
+i.fa-check-circle {
+    color: var(--ColorBase);
+}
+
+
+.TitleInfoRecord {
+    color: #999999;
+}
+
+.ValueInfoRecord {
+    color: #f3f3f3;
+}
+
+.ContainerDescriptionSendMessage {
+    background: #fcfff2;
+}
+
+.LabelInput {
+    color: #dddddd;
+}
+
+.ItemFormInput {
+    background: #555555;
+}
+
+.ItemFormInput textarea{
+    color: #ffffff;
+}
+
+.BtnStyle_6 {
+    box-shadow: none;
+}

@@ -1,0 +1,180 @@
+
+body {
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+
+#ImageDesignBackground {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    opacity: .8;
+    transform: rotate(180deg);
+}
+
+.Container {
+    margin: 100px auto;
+    padding: 0;
+}
+
+.ContainerContactUs {
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0 10px 14px rgba(206, 206, 206, 0.15);
+    border-radius: 7px;
+    position: relative;
+    display: flex;
+}
+
+.ContainerContactUs:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, .7);
+    z-index: -1;
+    border-radius: inherit;
+    transform: rotate(1.5deg);
+}
+
+.ContainerContactUs:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.35);
+    z-index: -1;
+    border-radius: inherit;
+    transform: rotate(3deg);
+}
+
+#ImageDesignContactUs {
+    width: 35%;
+    height: auto;
+    transform: rotateY(180deg) translateY(-28px);
+}
+
+.ContentContactUs {
+    text-align: right;
+    width: 50%;
+    margin-left: 10%;
+    margin-top: 70px;
+}
+
+.ContentContactUs form {
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
+
+.ContentContactUs > h1 {
+    font-size: 300%;
+}
+
+.TextDesciprtionContactUs {
+    line-height: 30px;
+    padding: 0 10px;
+    text-align: justify;
+}
+
+.ContianerSocialMedia {
+    text-align: left;
+    margin-top: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    padding-left: 10px;
+    background: rgba(255, 246, 234, 0.2);
+    border-radius: 2px 20px 0 0;
+    box-shadow: 1px 0 4px rgba(170, 170, 170, 0.3);
+}
+
+
+.ContianerSocialMedia > a {
+    display: block;
+    font-size: 170%;
+    margin: 0 5px;
+}
+
+[Telegram] {
+    color: #3ea2ff;
+}
+
+[Instagram] {
+    color: #ff5f5f;
+}
+
+[Instagram]:hover {
+    color: #e05454;
+}
+
+[Email] {
+    color: #ff3c79;
+}
+
+[Email]:hover {
+    color: #de3369;
+}
+
+input::placeholder {
+    font-size: 90%;
+    color: #999999;
+}
+
+textarea::placeholder {
+    font-size: 90%;
+    color: #999999;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .ContainerContactUs {
+        display: block;
+    }
+
+    #ImageDesignContactUs {
+        width: 50%;
+        margin-top: 10px;
+        transform: translateY(0) rotateY(180deg);
+    }
+
+    .ContentContactUs {
+        width: 95%;
+        margin: auto;
+        padding-bottom: 10px;
+    }
+
+    .ContentContactUs h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #ImageDesignContactUs {
+        width: 80%;
+    }
+
+    .ContentContactUs {
+        padding-bottom: 120px;
+    }
+
+    .ItemFormInput {
+        width: 95%;
+    }
+
+    #BtnSubmitForm {
+        width: 100%;
+        padding: 8px;
+    }
+}
+

@@ -1,0 +1,186 @@
+body {
+    background: var(--Compl-Black);
+}
+
+.ContainerContentTop {
+    background: var(--ColorBase);
+}
+
+.ContainerContentTop:after {
+    background: rgba(0, 240, 207, 0.3);
+}
+
+
+.ContainerContentTop:before {
+    background: rgba(0, 240, 207, 0.15);
+}
+
+.ContainerContentTop > div h1 {
+    color: #ffffff;
+}
+
+.ContainerContentTop > div p {
+    color: #f6f6f6;
+}
+
+.ContainerBenefits {
+    background: #333333;
+}
+
+.ContainerBenefits img {
+    opacity: .4;
+}
+
+.ContainerBenefits .ContianerTitle p {
+    color: #f0f0f0 !important;
+}
+
+.ContainerBenefits:after {
+    display: none;
+}
+
+.ContainerBenefits:before {
+    display: none;
+}
+
+.Benefit h3 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.Benefit p {
+    color: #f0f0f0;
+}
+
+.Benefit i {
+    background: #333333 !important;
+    box-shadow: 2px 3px 4px rgba(34, 34, 34, 0.79);
+}
+
+.Benefit[Security] {
+    background: #4dbfff;
+}
+
+.Benefit[LowCost] {
+    background: #39e09c;
+}
+
+.Benefit[FormProfesional] {
+    background: #e18df6;
+}
+
+
+.ContainerAboutUsAndComment:after {
+    background: #ffbec3;
+    box-shadow: none;
+}
+
+.ContainerAboutUsAndComment:before {
+    background: #32ffb0;
+    box-shadow: none;
+}
+
+.ContianerAboutUs .ContianerTitle p {
+    color: #ffffff !important;
+}
+
+.AboutUs {
+    background: #333333;
+    box-shadow: 0 5px 12px rgba(37, 37, 37, 0.8);
+}
+
+.AboutUs p {
+    color: #f0f0f0;
+}
+
+.AboutUs:after {
+    display: none;
+}
+
+.AboutUs:before {
+    display: none;
+}
+
+.ContianerComments .ContianerTitle p {
+    color: #ffffff !important;
+}
+
+.Comments {
+    background: #333333;
+    box-shadow: 0 5px 12px rgba(37, 37, 37, 0.8);
+}
+
+.Comments:after {
+    display: none;
+}
+
+.Comments:before {
+    display: none;
+}
+
+.Comments p {
+    color: #f0f0f0;
+}
+
+.ContianerGoalUs .ContianerTitle p {
+    color: #ffffff !important;
+}
+
+.GoalUs {
+    background: #333333;
+    box-shadow: 0 5px 12px rgba(37, 37, 37, 0.8);
+}
+
+.GoalUs:after {
+    display: none;
+}
+
+.GoalUs:before {
+    display: none;
+}
+
+.GoalUs p {
+    color: #f0f0f0;
+}
+
+.ContianerFAQ {
+    background: #333333;
+    box-shadow: 0 5px 12px rgba(37, 37, 37, 0.8);
+}
+
+.ContianerFAQ:after {
+    display: none;
+}
+
+.ContianerFAQ:before {
+    display: none;
+}
+
+.ContianerFAQ .ContianerTitle p {
+    color: #ffffff !important;
+}
+
+.NoteFAQ {
+    background: none;
+    color: #e1fffc;
+}
+
+.FAQS:after {
+    background: #aaaaaa;
+}
+
+.FAQ > div {
+    background: #bbffcf;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(34, 34, 34, 0.3);
+}
+
+.FAQ > div > div {
+    background: #333333;
+    border-radius: inherit;
+}
+
+.FAQ p {
+    color: #222222;
+}
+

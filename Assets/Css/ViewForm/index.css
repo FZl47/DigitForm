@@ -1,0 +1,264 @@
+
+body {
+    position: relative;
+}
+
+.ImageDesignBackground {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: absolute;
+    opacity: .1;
+    background: url("/Assets/Img/Design/ImageDesignViewForm_1.jpg");
+}
+
+#ContainerForm {
+    text-align: center;
+    margin: auto;
+}
+
+.ContainerHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+    background: #ffffff;
+    box-shadow: 0 4px 6px #eeeeee;
+    align-items: center;
+}
+
+.ContainerHeader p {
+    margin: 0 !important;
+}
+
+.Logo img {
+    width: 40px;
+    height: auto;
+}
+
+.Logo p {
+    display: inline-block;
+    margin: 0;
+}
+
+.TitleForm {
+    color: #333333;
+}
+
+.TitleForm p {
+    margin: 0;
+}
+
+.TimeForm {
+    background: rgba(255, 97, 98, 0.2);
+    color: #ff443c;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px dashed #ff6162;
+    margin-left: 5px;
+    font-size: 90%;
+}
+
+.TimeFormFixed {
+    position: fixed;
+    right: 5px;
+    bottom: 55px;
+    font-size: 75%;
+    background: rgb(255, 87, 99);
+    box-shadow: 1px 1px 3px rgba(170, 42, 21, 0.4), inset -1px -1px 3px rgba(170, 42, 21, 0.6);
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 4;
+}
+
+#ContainerForm {
+    margin-top: 80px;
+    padding-bottom: 120px;
+}
+
+#ContainerForm * {
+    cursor: default;
+}
+
+input:not([type='radio'],[type='checkbox']) {
+    cursor: text !important;
+}
+
+
+input[type='radio']:checked + * {
+    font-weight: bold;
+}
+
+textarea {
+    cursor: text !important;
+}
+
+.PAGE_FORM {
+    min-height: 300px;
+    display: block;
+    box-shadow: 0 3px 20px rgba(170, 170, 170, 0.2);
+    margin: 20px auto;
+    border-radius: 7px;
+}
+
+.QUESTION_BOX {
+    overflow: hidden !important;
+}
+
+.BOX_BASE {
+    overflow: hidden;
+}
+
+.CounterNumberPage {
+    font-size: 50%;
+    color: inherit;
+    background: #ffffff;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.SCORE_QUESTION {
+    color: #666666;
+    font-size: 75%;
+}
+
+.ALERT_INPUT_FORM {
+    font-size: 80%;
+    font-weight: bold;
+    margin: 4px 0;
+    padding: 2px 4px;
+    margin-right: 10px;
+    color: #ff5763;
+    border-radius: 7px;
+    background: #ffffff;
+}
+
+.INPUT_FORM_INVALID {
+    border: 1px solid #ff5763 !important;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_LenChar_Less {
+    border: 1px solid #ff5763 !important;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_LenChar_Bigger {
+    border: 1px solid #ff5763 !important;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_LenNumber_Bigger {
+    border: 1px solid #ff5763 !important;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_LenNumber_Less {
+    border: 1px solid #ff5763 !important;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_LanguageChar {
+    border: 1px solid #ff5763 !important;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_SizeFile {
+    border: 1px solid #ff5763 !important;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_TypeFile {
+    border: 1px solid #ff5763 !important;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_TimeSpan_Bigger {
+    border: 1px solid #ff5763 !important;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_TimeSpan_Less {
+    border: 1px solid #ff5763 !important;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_DateSpan_Less {
+    border: 1px solid #ff5763 !important;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_DateSpan_Bigger {
+    border: 1px solid #ff5763 !important;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_SizeFile ~ .ALERT_INPUT_FORM {
+    margin-top: 0;
+}
+
+.INPUT_FORM_INVALID_VALIDATION_TypeFile ~ .ALERT_INPUT_FORM {
+    margin-top: 0;
+}
+
+.ContainerBtnsForm {
+    direction: ltr;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background: #ffffff;
+    box-shadow: 0 -5px 15px rgba(170, 170, 170, 0.15);
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.ContainerPagination {
+    text-align: center;
+    font-size: 95%;
+    color: #333333;
+}
+
+.TitleFormSmallSize {
+    display: none;
+}
+
+.TitleFormSmallSize p {
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .TitleForm {
+        display: none;
+    }
+
+    .TitleFormSmallSize {
+        display: block;
+        padding: 10px 0 8px 0;
+        text-align: center;
+        background: #ffffff;
+    }
+
+
+    .BtnStyle_5 {
+        font-size: 90%;
+        width: 70px;
+        margin: 0;
+    }
+
+    #BtnPreVious {
+        font-size: 90%;
+        width: 70px;
+        margin: 0;
+    }
+
+    #BtnNext {
+        font-size: 90%;
+        width: 70px;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .TimeForm {
+        font-size: 70%;
+    }
+
+    .Logo p {
+        display: none;
+    }
+}
+

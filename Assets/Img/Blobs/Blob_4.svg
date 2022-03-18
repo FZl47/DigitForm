@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="258px" height="289px" viewBox="0 0 258 289" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Anxiety Gradient Blob</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="77.5501046%" y1="9.17366599%" x2="-8.24357466%" y2="81.4017768%" id="linearGradient-1">
+            <stop stop-color="#3AFECE" stop-opacity="0.991791214" offset="0%"></stop>
+            <stop stop-color="#43B1FF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M135.371347,266.637849 C258.823796,252.357047 251.188133,221.148489 263.966041,137.796728 C276.743949,54.4449667 152.577397,-5.67896452 92.3031512,20.0784952 C32.0289052,45.835955 60.4087535,92.0433588 6.77665212,137.796728 C-46.8554492,183.550097 11.9188968,280.91865 135.371347,266.637849 Z" id="Anxiety-Gradient-Blob" fill="url(#linearGradient-1)" transform="translate(125.881763, 141.053832) rotate(-70.000000) translate(-125.881763, -141.053832) "></path>
+    </g>
+</svg>

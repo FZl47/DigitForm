@@ -1,0 +1,225 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load FilterTags %}
+{% load static %}
+
+{% block Title %}
+    {{ Form.Title }} - # : {{ Record.id }}
+{% endblock %}
+
+{% block Link %}
+    <link rel="stylesheet" href="/Assets/Css/Base/Header/index.css">
+    <link rel="stylesheet" href="/Assets/Css/Base/Footer/index.css">
+    <link rel="stylesheet" href="/Assets/FormSaz/Css/StyleBase.css">
+    <link rel="stylesheet" href="/Assets/FormSaz/Css/Record/index.css">
+{% endblock %}
+
+{% block Content %}
+    {% include 'Base/Header/Header.html' with Fixed='false' Place='Other' ListItems='Home,CreateForm,Learn,FAQ,AboutUs,ContactUs,BtnChangeTheme,User,Logo' ListItemsMobile='CreateForm,Learn,FAQ,AboutUs,ContactUs,Home,BtnChangeTheme' %}
+    <div class="Header">
+        <div>
+            <div>
+                {{ Form.Title|truncatechars:40 }}
+            </div>
+            <div>
+                <div class="AboutForm AboutFormView" data-toggle="tooltip" title="نمایش فرم">
+                    <a href="/View/{{ Form.ID_FORM }}">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="AboutForm AboutFormSettings" data-toggle="tooltip" title="تنظیمات فرم">
+                    <a href="/FormSaz/View/{{ Form.ID_FORM }}">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                </div>
+                <div class="AboutForm AboutSeenForm" data-toggle="tooltip" title="تعداد بازدید از فرم">
+                    <i class="fa fa-eye"></i>
+                    <p>{{ Form.GetSeenForm }}</p>
+                </div>
+                <div class="AboutForm AboutSubmitForm" data-toggle="tooltip" title="تعداد ثبت فرم">
+                    <i class="fa fa-file-check"></i>
+                    <p>{{ Form.GetSubmitForm }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Container d-lg-flex justify-content-center align-items-start">
+        <main class="CotnainerRecord col-12 col-md-10 col-lg-9 mx-auto p-0">
+            <div class="ContainerTitle">
+                <p>
+                    دیتای ثبت شده
+                </p>
+            </div>
+            <div>
+                <div class="InfoRecord">
+                    <div class="d-flex justify-content-between  m-0">
+                        <div>
+                            <p class="TitleInfoRecord d-inline-block  Large"># :</p>
+                            <p class="ValueInfoRecord d-inline-block font-weight-bold Large">{{ Record.id }}</p>
+                        </div>
+                        <div>
+                            {% if Record.IsChecked == True %}
+                                <i class="fa fa-check-circle ml-2" data-toggle="tooltip" title="مشاهده شده است"></i>
+                            {% endif %}
+                            <i class="fa fa-trash" Trash ClickFunc="DeleteRecord()" title="حذف جواب"></i>
+                            <form action="/FormSaz/{{ Form.ID_FORM }}/Record/{{ Record.id }}/Delete"
+                                  id="FormDeleteRecord" method="post" class="d-none">
+                                {% csrf_token %}
+                            </form>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="TitleInfoRecord">ایدی کاربر :</p>
+                        <p class="ValueInfoRecord">{{ Record.UserCode }}</p>
+                    </div>
+                    <div>
+                        <p class="TitleInfoRecord">آیپی (IP) :</p>
+                        <p class="ValueInfoRecord">{{ Record.IP }}</p>
+                    </div>
+                    <div>
+                        <p class="TitleInfoRecord">زمان ثبت :</p>
+                        <p class="ValueInfoRecord">{{ Record.GetTimePast }}</p>
+                        <p class="Small">- {{ Record.DateTimeSubmit }}</p>
+                    </div>
+                    <div>
+                        <p class="TitleInfoRecord">نوع دستگاه :</p>
+                        <p class="ValueInfoRecord">{{ Record.InfoDevice }}</p>
+                    </div>
+                </div>
+                <div class="ContainerTitle p-0">
+                    <p>
+                        فرم
+                    </p>
+                </div>
+                <div id="ContainerForm" class="carousel-inner">
+                    <!-- Form -->
+                    <div class="d-none">
+                        <ul class="carousel-indicators" id="Slider_Pages_Items" dir="ltr">
+                            <!-- Items Slider -->
+                        </ul>
+                        <a class="carousel-control-prev" href="#ContainerBox" data-slide="prev">
+                        <span class="carousel-control-prev-icon">
+                            <i class="fa fa-angle-left"></i>
+                        </span>
+                        </a>
+                        <a class="carousel-control-next" href="#ContainerBox" data-slide="next">
+                        <span class="carousel-control-next-icon">
+                            <i class="fa fa-angle-right"></i>
+                        </span>
+                        </a>
+                    </div>
+                    <!-- Page -->
+                </div>
+            </div>
+            <div id="ContainerSendMessage">
+                <div class="ContainerTitle">
+                    <p>ارسال پیام به کاربر</p>
+                </div>
+                <div class="ContainerDescriptionSendMessage col-11 col-md-7 ">
+                    <p>شما میتوانید پیامی را برای ارسال کننده این جواب در نظر بگیرید .</p>
+                    <img src="/Assets/Img/Design/ImagePhoneMessage.jpg" alt="Phone Send Message">
+                </div>
+                <form id="FormSendMessage" method="post"
+                      action="/FormSaz/{{ Form.ID_FORM }}/Record/{{ Record.id }}/SubmitMessage">
+                    {% csrf_token %}
+                    <div class="ItemForm w-75  m-auto">
+                        <p class="LabelInput pb-3 m-auto">پیام :</p>
+                        <div class="ItemFormInput w-100 m-auto">
+                            <textarea placeholder=" پیام خود را وارد بنویسید" name="Message" id="InputSendMessage"
+                                      InputForm
+                                      CheckInputVal TypeVal="Text" SetIn="Icon" Bigger="0"
+                                      Less="3000">{{ Record.Message|NoneVal:'' }}</textarea>
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="w-75 m-auto text-left">
+                        <button class="BtnStyle_6 Disabled mt-3" id="BtnSendMessage" type="button">ارسال</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <aside class="CotnainerRecords col-12 col-md-10 col-lg-3 p-0 mx-auto">
+            <div class="mx-0 mx-md-3">
+                <div class="ContainerTitle">
+                    <p>
+                        دیگر جواب ها
+                    </p>
+                </div>
+                <div class="Records">
+                    {% for Record in Form.GetRecords|ObjectsExceptID:Record.id %}
+                        <div class="Record">
+                            <div>
+                                <p class="TitleInfoRecord">#</p>
+                                <p class="ValueInfoRecord">{{ Record.id }}</p>
+                            </div>
+                            <div>
+                                <p class="TitleInfoRecord">IP</p>
+                                <p class="ValueInfoRecord">{{ Record.IP }}</p>
+                            </div>
+                            <div>
+                                <p class="TitleInfoRecord">زمان ثبت</p>
+                                <p class="ValueInfoRecord">{{ Record.GetTimePast }}</p>
+                            </div>
+                            {% if Record.IsChecked == True %}
+                                <div>
+                                    <i class="fa fa-check-circle" data-toggle="tooltip" title="مشاهده شده است"></i>
+                                </div>
+                            {% endif %}
+                            <a href="/FormSaz/{{ Form.ID_FORM }}/Record/{{ Record.id }}">
+                                <i class="far fa-angle-left"></i>
+                            </a>
+                        </div>
+                    {% empty %}
+                        <div class="RecordsEmpty">
+                            <img src="/Assets/Img/Design/File_Sad.jpg" alt="File Sad 404">
+                            <h4>چیزی یافت نشد</h4>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </aside>
+    </div>
+    {% include 'Base/Footer/index.html' %}
+{% endblock %}
+
+{% block Js %}
+    <script src="/Assets/FormSaz/Js/ModelsBase.js"></script>
+    <script src="/Assets/FormSaz/Js/FormQuiz/ModelsQuiz.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        GetCookieFunctionality_ShowNotification()
+        // Important
+        let TYPECREATEMODELS = 'Record'
+        let _Form = JSON.parse('{{ Form_JSON|escapejs }}')
+        let _ConfigForm = JSON.parse(_Form.GetConfig)
+        let RecordJSON = JSON.parse('{{ Record.GetData|escapejs }}')
+        _ID_FORM = _Form.ID_FORM
+        let _TypeForm = '{{ Form.Type }}'
+
+        // Initial First Elements //
+        let FORM = new FORM_BASE(_Form)
+        FORM.Config.ConfigSettings = _ConfigForm
+
+        let BtnPreVious = document.getElementById('BtnPreVious')
+        let BtnNext = document.getElementById('BtnNext')
+        let BtnSubmit = document.getElementById('BtnSubmit')
+
+        {% for Page in Form.GetPages %}
+            var __Page = new PAGE_ELEMENT('Record')
+            var __PageJSON = JSON.parse('{{ Page.GetJSON|escapejs }}')
+            __Page.id = __PageJSON.ID_Element
+            __Page.Config.ConfigSettings = __PageJSON.Config
+            __Page.Style.StyleSettings = __PageJSON.Style
+            __Page.Config.__Load_Config()
+            __Page.Style.__Load_Styles()
+            for (let Element of __PageJSON.GetElementsCLASS_JSON) {
+                CreateElement(Element)
+            }
+        {% empty %}
+            new PAGE_ELEMENT()
+        {% endfor %}
+
+    </script>
+    <script src="{% static 'FormSaz/Js/Record/index.js' %}"></script>
+{% endblock %}

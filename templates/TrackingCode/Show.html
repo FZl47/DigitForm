@@ -1,0 +1,47 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load static %}
+{% block Title %}
+    کد پیگیری فرم {{ Form.Title }}
+{% endblock %}
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'Css/Base/Header/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/Base/Footer/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/TrackingCode/Show.css' %}">
+{% endblock %}
+
+
+{% block Content %}
+    {% include 'Base/Header/Header.html' with Fixed='true' Place='Other' ListItems='Home,CreateForm,Learn,AboutUs,ContactUs,User,Logo' ListItemsMobile='CreateForm,Learn,AboutUs,ContactUs,Home' %}
+    <img src="/Assets/Img/Design/ImageDesignBackground_2.jpg" alt="Image Background Design" id="ImageDesignBackground">
+    <div class="ContainerTrackingCode d-block d-md-flex justify-content-center align-items-center">
+        <div class="ImageDesignContainerTrackingCode"></div>
+        <img src="/Assets/Img/Design/File_Happy.jpg" alt="File Happy Desgin" class="col-11 col-md-7 col-lg-4">
+        <div class="ContentTrackingCode">
+            <h1 class="FontFamily_KalameBalack ColorBase mb-4">
+                فرم شما با موفقیت ثبت شد
+            </h1>
+            <h4 class="text-right FontFamily_KalameBalack text-dark">کد پیگیری شما :</h4>
+            <div>
+                <p id="TrackingCode" class="TrackingCode">{{ TrackingCode }}</p>
+            </div>
+            <div class="text-left my-4">
+                <a href="/FormSaz/Trc/Check/{{ Form.ID_FORM }}/{{ TrackingCode }}" class="BtnShowResult">مشاهده
+                    نتیجه</a>
+            </div>
+            <p class="Text_Info_TrackingCode">با استفاده از کد پیگیری میتوانید نتیجه فرمی که پر کرده اید را مشاهده
+                کنید</p>
+        </div>
+    </div>
+    {% include 'Base/Footer/index.html' %}
+{% endblock %}
+
+{% block Js %}
+    <script>
+        document.getElementById('TrackingCode').addEventListener('click', function () {
+            let Code = this.innerText
+            navigator.clipboard.writeText(Code);
+            ShowNotificationMessage('متن کپی شد', 'Success', 3000)
+        })
+    </script>
+{% endblock %}

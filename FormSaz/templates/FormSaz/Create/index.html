@@ -1,0 +1,44 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load static %}
+
+{% block Title %}
+    ایجاد فرم
+{% endblock %}
+
+{% block Css %}
+    <link rel="stylesheet" href="{% static 'Css/Base/Footer/index.css' %}">
+    <link rel="stylesheet" href="{% static 'FormSaz/Css/StyleBase.css' %}">
+    <link rel="stylesheet" href="{% static 'FormSaz/Css/Animations.css' %}">
+    <link rel="stylesheet" href="{% static 'FormSaz/Css/Creator/IndexCreator.css' %}">
+{% endblock %}
+{% block Content %}
+    {% include 'FormSaz/TemplateBase/TemplateCreator/index.html' %}
+    {% include 'Base/Footer/index.html' %}
+{% endblock %}
+{% block Js %}
+    <script>
+        let _Form = JSON.parse('{{ Form_JSON|escapejs }}')
+        let _ID_FORM = _Form.ID_FORM
+        let _TypeForm = '{{ Form.Type }}'
+
+    </script>
+    <script src="{% static 'FormSaz/Js/IndexBase.js' %}"></script>
+    <script src="{% static 'FormSaz/Js/ModelsBase.js' %}"></script>
+    <script>
+        // Initial First Elements //
+        let FORM = new FORM_BASE(_Form)
+        let Page = new PAGE_ELEMENT()
+
+        {#let LIMIT_SIZE_IMAGE = (1024 * 1024) // 1Mb#}
+        {#let LIST_TYPE_IMAGE = ['image/png', 'image/jpeg', 'image/gif']#}
+        {#let LIMIT_SIZE_VIDEO = (1024 * 1024) * 12 // 12Mb#}
+        {#let LIST_TYPE_VIDEO = ['video/mp4']#}
+        {#let LIMIT_SIZE_AUDIO = (1024 * 1024) * 5 // 5Mb#}
+        {#let LIST_TYPE_AUDIO = ['audio/mpeg']#}
+        {#let LIMIT_SIZE_INPUT_IMAGE = (1024 * 1024) // 1Mb#}
+    </script>
+    {% if Form.Type == 'Quiz' %}
+        <script src="{% static 'FormSaz/Js/FormQuiz/ModelsQuiz.js' %}"></script>
+        <script src="{% static 'FormSaz/Js/FormQuiz/IndexBase.js' %}"></script>
+    {% endif %}
+{% endblock %}

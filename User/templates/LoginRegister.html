@@ -1,0 +1,131 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load static %}
+
+{% block Title %}
+    ایجاد حساب - ورود
+{% endblock %}
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'Css/Base/Footer/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/User/Login/index.css' %}">
+{% endblock %}
+
+
+{% block Content %}
+    <div class="Container col-12 col-lg-10">
+        <div class="ContainerHeader">
+            <div>
+                <a href="/">
+                    <button>
+                        <p>خانه</p>
+                        <i class="fa fa-home-alt"></i>
+                    </button>
+                </a>
+            </div>
+            <div>
+                <i class="fa fa-moon" id="BtnChangeTheme"></i>
+                <img src="/Assets/Img/Logo/Logo.jpg" alt="Logo" class="Logo" title="دیجیت فرم">
+            </div>
+        </div>
+        <div class="ContianerContent">
+            <div class="ContainerImageDesign">
+                <img src="/Assets/Img/User/LoginRegister/ImageLoginRegister.jpg" alt="Image Login Register">
+            </div>
+            <div class="ContainerForm">
+                <form id="FormLogin" class="FormLoginActive">
+                    <div class="ContainerTitleForm">
+                        <p>
+                            ورود
+                        </p>
+                    </div>
+                    <p id="TextStatusFormLogin" class="d-none"></p>
+                    <div class="ItemForm">
+                        <p class="LabelInput">ایمیل :</p>
+                        <div class="ItemFormInput">
+                            <input type="email" id="InputEmailLogin" InputForm SetIn="Icon" TypeVal="Email"
+                                   placeholder="ایمیل خود را وارد نمایید" Bigger="3" Less="100">
+                            <i class="fa fa-times-circle"></i>
+                        </div>
+                    </div>
+                    <div class="ItemForm">
+                        <p class="LabelInput">رمز :</p>
+                        <div class="ItemFormInput">
+                            <input type="password" id="InputPasswordLogin" InputForm SetIn="Icon" TypeVal="Password"
+                                   placeholder="پسورد خود را وارد نمایید" Bigger="7" Less="100">
+                            <i class="fa fa-times-circle"></i>
+                        </div>
+                    </div>
+                    <div class="ContainerRememberMe">
+                        <div>
+                            <label>
+                                <p>مرا به خاطر بسپار</p>
+                                <input type="checkbox" id="InputRememberMeLogin" class="InputRememberME">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="ContianerBtnSubmit">
+                        <button type="button" id="BtnLogin" class="BtnStyle_1_OutLine Disabled">Login</button>
+                    </div>
+                </form>
+                <form id="FormRegister" class="FormRegisterDisabled">
+                    <div class="ContainerTitleForm">
+                        <p>
+                            ایجاد حساب
+                        </p>
+                    </div>
+                    <p id="TextStatusFormRegister" class="d-none"></p>
+                    <div class="ItemForm">
+                        <p class="LabelInput">ایمیل :</p>
+                        <div class="ItemFormInput">
+                            <input type="email" id="InputEmailRegister" InputForm SetIn="Icon" TypeVal="Email"
+                                   placeholder="ایمیل خود را وارد نمایید" Bigger="3" Less="100">
+                            <i class="fa fa-times-circle"></i>
+                        </div>
+                    </div>
+                    <div class="ItemForm">
+                        <p class="LabelInput">رمز :</p>
+                        <div class="ItemFormInput">
+                            <input type="password" id="InputPasswordRegister" InputForm SetIn="Icon" TypeVal="Password"
+                                   placeholder="پسورد خود را وارد نمایید" Bigger="7" Less="100">
+                            <i class="fa fa-times-circle"></i>
+                        </div>
+                    </div>
+                    <div class="ItemForm">
+                        <p class="LabelInput">تکرار رمز :</p>
+                        <div class="ItemFormInput">
+                            <input type="password" id="InputPassword2Register" InputForm SetIn="Icon" TypeVal="Password"
+                                   placeholder="پسورد خود را مجددا وارد نمایید" Bigger="7" Less="100">
+                            <i class="fa fa-times-circle"></i>
+                        </div>
+                    </div>
+                    <div class="ItemForm">
+                        <p class="LabelInput">کد معرفی(اختیاری) :</p>
+                        <div class="ItemFormInput">
+                            <input type="text" id="InputIntroductionCodeRegister" InputForm SetIn="Icon" TypeVal="Text"
+                                   placeholder="کد معرف خود را وارد نمایید" Bigger="-1" Less="9" Valid="true">
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                        <p class="NoteInputWarning">
+                            با وارد کردن کد معرف دوستان خود <b>200</b> سکه از ما هدیه بگیرید
+                            <i class="fa fa-coins"></i>
+                        </p>
+                    </div>
+                    <div class="ContianerBtnSubmit">
+                        <button type="button" id="BtnRegister" class="BtnStyle_1_OutLine Disabled">Register</button>
+                    </div>
+                </form>
+                <div class="ContainerBtnSwitchForms">
+                    <button id="BtnSwitchForms" TypeFormMostActive="Register">
+                        ایجاد حساب کاربری
+                        <i class="fa fa-user-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'Base/Footer/index.html' %}
+{% endblock %}
+
+{% block Js %}
+    <script src="{% static 'Js/User/Login/index.js' %}"></script>
+{% endblock %}

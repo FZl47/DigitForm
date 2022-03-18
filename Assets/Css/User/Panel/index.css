@@ -1,0 +1,1286 @@
+
+.Container {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    min-height: 99vh;
+    position: relative;
+}
+
+
+.ContainerContent {
+    width: 82%;
+    margin-left: 15px;
+    border-radius: 7px;
+    display: block;
+}
+
+.ContainerHeaderContent {
+    background: var(--Compl-GreenLight);
+    display: block;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-top: 0;
+    box-shadow: 0 -5px 7px rgba(170, 170, 170, 0.1);
+    border-radius: 5px;
+}
+
+.ContainerHeaderContent div {
+    display: inline-block;
+}
+
+.ContainerInputSearchForm {
+    text-align: center;
+    width: 650px;
+    height: 45px;
+    background: #ffffff;
+    display: flex !important;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all .15s;
+}
+
+.ContainerInputSearchForm input {
+    width: 90%;
+    height: 100%;
+    padding: 5px;
+    border-radius: inherit;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    cursor: text;
+}
+
+.ContainerInputSearchForm input::placeholder {
+    font-size: 90%;
+}
+
+.ContainerInputSearchForm:hover {
+    box-shadow: 0 2px 5px rgba(170, 170, 170, 0.4);
+}
+
+.ContainerInputSearchForm:hover i {
+    margin-top: 14px;
+    transform: rotate(0deg);
+}
+
+.ContainerInputSearchForm input:focus + i {
+    margin-top: 14px;
+    transform: rotate(0deg);
+}
+
+.ContainerInputSearchForm i {
+    font-size: 130%;
+    margin-top: 10px;
+    margin-left: 15px;
+    color: #444444;
+    margin-top: 65px;
+    transform: rotate(150deg);
+    transition: all .15s;
+}
+
+.ContainerInputSearchForm i:hover {
+    font-weight: bold;
+}
+
+.ContainerCoinAndInfo {
+    border-radius: 7px;
+}
+
+.ContainerCoinAndInfo p {
+    display: inline-block;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 10px;
+    font-size: 75%;
+}
+
+.ContainerCoinAndInfo span {
+    display: inline-block;
+    padding: 5px;
+    margin: 3px;
+    font-weight: bold;
+    background: #fff2c5;
+    color: var(--Compl-Black);
+    box-shadow: 0 1.5px 2px #dddddd;
+    border-radius: 10px;
+}
+
+.ContainerCoinAndInfo span i {
+    color: #f1a500;
+}
+
+.ContainerMainContent {
+    text-align: right;
+    background: #ffffff;
+    margin-top: 20px;
+    transition: all .15s;
+    min-height: 100vh;
+    animation: ShowContianerPagePanel .2s forwards;
+    transform: translateY(-20px) scale(.9);
+    opacity: .2;
+    position: relative;
+}
+
+@keyframes ShowContianerPagePanel {
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#Container_ManagementCoin {
+    padding-bottom: 300px;
+}
+
+.ContainerMenu {
+    width: 15%;
+    background: #fafafa;
+    border-radius: 7px;
+    margin-right: 20px;
+    box-shadow: 2px 3px 10px rgba(170, 170, 170, 0.1);
+    min-height: 98%;
+    position: relative;
+}
+
+.TitleContainerMenu {
+    display: flex;
+    justify-content: space-around;
+    font-size: 150%;
+    padding: 5px;
+    background: var(--Compl-Black);
+    color: #ffffff;
+    border-radius: 7px 7px 0 0;
+}
+
+.TitleContainerMenu p {
+    display: inline-block;
+    margin: 0;
+    font-family: MjCasablancaHeavy;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.TitleContainerMenu i {
+    font-size: 105%;
+    padding-top: 4px;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.ContainerIntroductionCode {
+    margin-top: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 90%;
+}
+
+.ContainerIntroductionCode p {
+    display: inline-block;
+    margin: 0;
+}
+
+.TitleInfoIntroductionCode {
+    font-size: 80%;
+}
+
+.IntroductionCode {
+    background: #ff776b;
+    box-shadow: 0 1px 5px rgba(245, 157, 151, 0.15);
+    padding: 15px 20px;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 80%;
+    margin: 0;
+    line-height: 0;
+}
+
+.ContainerTitleSearchFormCreated {
+    margin: 25px;
+}
+
+.ContainerTitleSearchFormCreated p {
+    color: #777777;
+    font-family: 'MjCasablancaHeavy';
+    display: inline-block;
+}
+
+#ResultSearchForm {
+    color: var(--Compl-Red);
+    font-family: 'Vazir';
+}
+
+
+.ContainerBtnsMenu {
+    border-radius: inherit;
+    padding: 10px 0;
+    margin-top: 50px;
+}
+
+.ContainerBtnsMenu button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 18px;
+    margin: auto;
+    border: none;
+    outline: none;
+    background: none;
+    overflow: hidden;
+    transition: all .15s;
+    position: relative;
+    border-radius: 10px;
+}
+
+.ContainerBtnsMenu .ActiveBtnMenu:before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 25%;
+    background: var(--Compl-Blue);
+    left: 0;
+    top: 36.5%;
+    border-radius: 0 15px 15px 0;
+}
+
+.ContainerBtnsMenu button i {
+    transition: all .2s;
+    color: var(--ColorBase);
+}
+
+.ContainerBtnsMenu button:hover {
+    background: var(--ColorBase);
+    color: #ffffff;
+    border-radius: 15px 10px 10px 30px;
+}
+
+.ContainerBtnsMenu button:focus {
+    background: var(--ColorBase);
+    color: #ffffff;
+    border-radius: 15px 10px 10px 30px;
+}
+
+.ContainerBtnsMenu button:active {
+    background: var(--ColorBase);
+    color: #ffffff;
+    transform: scale(.97);
+}
+
+.ContainerBtnsMenu button:hover i {
+    margin-left: 0;
+    color: #ffffff;
+    opacity: 1;
+    transform: scale(1.3);
+    font-weight: bold;
+}
+
+.ContainerBtnsMenu button:focus i {
+    margin-left: 0;
+    color: #ffffff;
+    opacity: 1;
+    transform: scale(1.3);
+    font-weight: bold;
+}
+
+
+#ContainerContentDoesNotExists {
+    width: 45%;
+    margin: 20px auto;
+}
+
+#ContainerContentDoesNotExists img {
+    width: 100%;
+}
+
+#ContainerContentDoesNotExists p {
+    transform: translateY(-15px);
+    font-size: 220%;
+    font-family: 'MjCasablancaHeavy';
+}
+
+#ContainerImageNoFormSearchResult {
+    margin: 20px auto;
+}
+
+#ContainerImageNoFormSearchResult img {
+    width: 100%;
+}
+
+#ContainerImageNoFormSearchResult p {
+    text-align: center;
+    transform: translateY(-15px);
+    font-size: 220%;
+    font-family: 'MjCasablancaHeavy';
+}
+
+
+.ContainerInfoBottomMenu {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: end;
+    padding: 5px;
+    width: 100%;
+}
+
+.ContainerInfoBottomMenu div {
+    text-align: center;
+    width: 100%;
+}
+
+.ContainerTitle {
+    color: #555555;
+    background: rgba(250, 243, 221, 0.25);
+    border-right: 5px solid var(--Compl-Blue);
+    font-size: 180%;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.ContainerTitle p {
+    margin: 0;
+    padding-right: 10px;
+}
+
+.CreateFastForm {
+    margin-top: 20px;
+    text-align: right;
+    display: flex;
+    padding: 20px 0;
+    justify-content: space-between;
+    align-items: start;
+}
+
+
+.Text_CreateFormFast {
+    text-align: center;
+    font-size: 200%;
+    font-family: 'MjCasablancaHeavy';
+    margin-top: 80px;
+    height: auto;
+    padding: 5px 30px;
+    border-radius: 80px;
+    background: rgba(153, 255, 204, 0.1);
+    color: var(--ColorBase);
+}
+
+
+#FormCreate_Form .ItemForm {
+    margin: 15px auto;
+    text-align: right;
+}
+
+#FormCreate_Form .ItemForm input::placeholder {
+    color: #999999;
+}
+
+.ContainerPayAndSubmitCreateForm {
+    background: rgba(179, 255, 226, 0.15);
+    margin: 40px auto;
+    width: 75%;
+    padding: 7px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ContainerNotePay {
+    display: inline-block;
+    font-size: 70%;
+}
+
+.ContainerNotePay p {
+    margin: 0;
+    padding: 4px 6px;
+    border-radius: 15px;
+    vertical-align: top;
+    background: #ffe9e4;
+    border-bottom: 1px dashed #dab1b1;
+    color: #b94435;
+}
+
+.ContainerNotePay i {
+    color: #f1a500;
+}
+
+#BtnSubmitFormCreate_Form {
+    padding: 10px;
+    width: 150px;
+    box-shadow: none;
+    transition: all .15s;
+}
+
+#BtnSubmitFormCreate_Form[type='button'] {
+    opacity: .4;
+    color: #666666;
+}
+
+
+.ContainerFormsCreated {
+    margin: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.FormCreated {
+    vertical-align: top;
+    box-shadow: 0 3px 11px rgba(192, 192, 192, 0.4);
+    background: #ffffff;
+    display: inline-block;
+    margin: 15px auto;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+#ContainerContentDoesNotExistsForms {
+    width: 45%;
+    margin: 20px auto;
+}
+
+#ContainerContentDoesNotExistsForms img {
+    width: 100%;
+}
+
+#ContainerContentDoesNotExistsForms p {
+    transform: translateY(-15px);
+    font-size: 220%;
+    font-family: 'MjCasablancaHeavy';
+}
+
+.ContainerHeaderFormCreated {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    text-align: right;
+}
+
+.ContainerHeaderFormCreated i {
+    margin: 2px;
+    padding: 0 2px;
+    cursor: pointer;
+    transition: all .15s;
+}
+
+.ContainerHeaderFormCreated i:hover {
+    transform: translateY(-2px);
+}
+
+.ContainerHeaderFormCreated i[BtnEditFormCreated] {
+    color: var(--ColorBase);
+}
+
+.ContainerHeaderFormCreated i[BtnViewFormCreated] {
+    color: #1ee2ff;
+}
+
+.ContainerHeaderFormCreated i[BtnTrashFormCreated] {
+    color: #ff6052;
+}
+
+.ContainerHeaderFormCreated i[BtnCopyLinkFormCreate] {
+    color: #809b9b;
+}
+
+
+.ContainerHeaderFormCreated p {
+    display: inline-block;
+    margin: 0;
+    margin-right: 2px;
+    padding: 4px;
+    background: rgba(255, 182, 182, 0.2);
+    color: #e9655d;
+    border-right: 1px dashed rgba(255, 166, 158, 0.9);
+    border-radius: 2px 50px 50px 2px;
+    font-size: 80%;
+}
+
+.ContainerHeaderFormCreated > div {
+    box-shadow: 0 0 2px #bbbbbb;
+    border-bottom-right-radius: 7px;
+    padding: 0 5px;
+    padding-left: 0;
+}
+
+.TitleFormCreated {
+    padding: 5px;
+    width: 50%;
+    color: var(--Compl-Black);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.DescriptionFormCreated {
+    color: #777777;
+    font-size: 80%;
+    padding: 15px;
+    text-align: right;
+    height: 80px;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ContianerItemsFormCreated {
+    text-align: center;
+}
+
+.ContianerItemsFormCreated > div {
+    width: 40%;
+    text-align: left;
+    overflow: hidden;
+    padding: 6px;
+    padding-left: 0;
+    margin: 3px;
+    font-size: 85%;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.ContianerItemsFormCreated > div > div {
+    text-align: right;
+}
+
+.ContianerItemsFormCreated > div > div p {
+    display: inline-block;
+    margin: 0;
+}
+
+.ContianerItemsFormCreated > div i {
+    font-size: 180%;
+    transform: rotate(-12deg);
+    opacity: .2;
+    float: left;
+}
+
+.ItemCountSubmitForm {
+    background: rgba(134, 255, 195, 0.2);
+    color: #00cfb0;
+    box-shadow: 0 1px 3px rgba(0, 207, 176, 0.3);
+}
+
+.ItemCountSeenForm {
+    background: rgba(155, 202, 255, 0.2);
+    color: #407dd6;
+    box-shadow: 0 1px 3px rgba(64, 125, 214, 0.3);
+}
+
+.ContainerBtnsFormCreated {
+    text-align: center;
+    margin: 10px 0;
+    margin-bottom: 5px;
+    padding: 7px;
+}
+
+.ContainerBtnsFormCreated button {
+    width: 180px;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.ContainerImageDesignFormsCreated {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    z-index: -1;
+}
+
+.ContainerImageDesignFormsCreated img:first-child {
+    width: 65%;
+    height: auto;
+    opacity: .9;
+}
+
+.ContainerImageDesignFormsCreated img:last-child {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    z-index: -1;
+    width: 70%;
+    opacity: .5;
+    transform: rotate(10deg);
+}
+
+.ContainerImageCoinsForDesign {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 350px;
+    height: auto;
+    z-index: -1;
+}
+
+.ContainerImageCoinsForDesign:after {
+    position: absolute;
+    content: "";
+    background: #ffebc1;
+    box-shadow: 2px -3px 6px rgba(255, 209, 91, 0.2);
+    display: block;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 85%;
+    border-radius: 70px 100% 20px 10px;
+}
+
+.ContainerImageCoinsForDesign img {
+    width: 100%;
+    height: auto;
+}
+
+.TextNoteBuyCoin {
+    font-family: 'Vazir';
+    margin: 70px 10px;
+    font-size: 100%;
+}
+
+.ContainerContentManageCoins {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.ContainerBuyCoin {
+    background: #fefff9;
+    box-shadow: 0 5px 15px #ede8e0;
+    display: inline-block;
+    text-align: center;
+    margin: 12px 15px;
+    padding: 3px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #eeeeee;
+}
+
+.ContainerBuyCoin[TypeModel='Bronze'] {
+    box-shadow: 0 5px 15px #d3d6c9;
+}
+
+.ContainerBuyCoin[TypeModel='Silver'] {
+    box-shadow: 0 5px 15px #d1cee4;
+    background: rgba(254, 255, 249, 0.6);
+}
+
+.ContainerBuyCoin[TypeModel='Gold'] {
+    transform: translateY(-20px);
+    box-shadow: 0 5px 15px rgba(223, 228, 167, 0.3);
+}
+
+
+.ContainerBuyCoin img {
+    width: 100%;
+    transform: scale(1.6) translateY(-10px);
+}
+
+.TitleContianerBuyCoin {
+    margin: 20px 5px;
+    font-family: 'KalameBlack';
+    text-align: right;
+    color: #555555;
+}
+
+.ValueCoinsContainerBuyCoin {
+    text-align: center;
+    margin: 10px 0;
+    padding: 5px 50px;
+    border-radius: 10px;
+    background: #fff2c5;
+    color: #444444;
+    box-shadow: 0 1.5px 2px #ddd;
+    font-size: 90%;
+    display: inline-block;
+    width: auto;
+}
+
+.ValueCoinsContainerBuyCoin p {
+    margin: 3px 0;
+    font-weight: bold;
+}
+
+.ValueCoinsContainerBuyCoin i {
+    color: #eaa000;
+}
+
+.PriceAndBuyContainerBuyCoin {
+    text-align: left;
+}
+
+.PriceContainerBuytCoin {
+    font-family: 'Yekan';
+    font-size: 110%;
+    padding: 4px 10px;
+    border-radius: 0 40px 40px 0;
+    margin: 20px 0;
+    color: #ffffff;
+    display: inline-block;
+    background: var(--Compl-Black);
+    box-shadow: 2px 2px 2px #aaaaaa;
+}
+
+.PriceContainerBuytCoin p {
+    display: inline-block;
+    direction: ltr;
+    margin: 0;
+}
+
+.BtnContainerBuyCoin {
+    margin: auto;
+    display: block;
+    width: 180px;
+    padding: 7px;
+    margin: 8px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px var(--ColorBase);
+    font-size: 110%;
+}
+
+.BtnContainerBuyCoin i {
+    transition: all .2s;
+}
+
+.BtnContainerBuyCoin:hover i {
+    font-weight: bold;
+    transform: translateX(10px);
+}
+
+.ContainerTransacation {
+    margin-top: 80px;
+    text-align: right;
+}
+
+.ContainerSpendCoinsTransaction, .ContainerBuyCoinsTransaction {
+    margin: auto;
+    margin-top: 50px;
+    width: 85%;
+    overflow: auto;
+}
+
+.TitleContainerTransaction {
+    font-size: 130%;
+    font-family: 'MjCasablancaHeavy';
+    margin-top: 15px;
+    padding-bottom: 3px;
+    display: inline-block;
+    border-bottom: 2px solid var(--ColorBase);
+}
+
+.ContainerTransacation table {
+    text-align: center;
+    background: #f6fffc;
+    width: 100%;
+    max-height: 300px;
+    padding: 5px;
+    margin: auto;
+    border-radius: 6px;
+    box-shadow: 0 0 1px rgb(155, 155, 155);
+    white-space: nowrap;
+}
+
+.ContainerTransacation table tr {
+    color: #555555;
+    font-size: 95%;
+}
+
+.ContainerTransacation table td {
+    padding: 20px 5px;
+}
+
+.ContainerTransacation table th {
+    padding: 10px;
+    color: #ffffff;
+    background: var(--Compl-Black);
+}
+
+.ContainerTransacation table p {
+    display: inline-block;
+    margin: 0;
+    direction: ltr;
+}
+
+.Tr_Empty {
+    text-align: center;
+    font-weight: bold;
+    color: #555555 !important;
+    width: 100%;
+}
+
+.ContianerFormInfo {
+    margin: 30px 10px;
+    padding: 10px 50px;
+    direction: ltr;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.FormInfo {
+    margin: auto;
+    margin-top: 70px;
+    width: 100%;
+    text-align: center;
+}
+
+.Text_CompleteInfo {
+    background: #fff2c5;
+    color: #78591a;
+    margin: 0 auto;
+    width: 70%;
+    padding: 10px 40px;
+    border-radius: 7px;
+    box-shadow: 0 1px 2px #dddddd;
+}
+
+.Text_CompleteInfo i {
+    color: #ffa115;
+}
+
+.ImageDesignCompleteInfo {
+    filter: drop-shadow(0 1px 10px rgba(0, 240, 207, 0.15));
+    width: 100%;
+}
+
+.FormInfo form {
+    margin-top: 30px;
+    text-align: right;
+    direction: rtl;
+}
+
+.FormInfo input::placeholder {
+    font-size: 85%;
+}
+
+.ContainerBtnSubmitInfo {
+    margin-top: 10px;
+    text-align: left;
+    width: 90%;
+}
+
+#BtnChangeTheme {
+    cursor: pointer;
+}
+
+
+.FormInfo .ContainerIntroductionCode {
+    padding: 5px 10px;
+    display: block;
+    margin: 10px 0;
+    background: rgba(238, 238, 238, 0.3);
+    border: 1px dashed #cccccc;
+    border-radius: 7px;
+}
+
+.FormInfo .ContainerIntroductionCode p:first-child {
+    font-size: 85%;
+    margin-bottom: 15px;
+}
+
+.FormInfo .ContainerIntroductionCode > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+}
+
+.ContianerCoinInventory {
+    text-align: left;
+    padding: 4px;
+    margin: 10px auto;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.ContianerCoinInventory p {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.ContianerCoinInventory i {
+    color: #f1a500;
+}
+
+.ContianerCoinInventory > div {
+    display: inline-block;
+    padding: 7px;
+    margin: 3px;
+    font-weight: bold;
+    background: #fff2c5;
+    color: var(--Compl-Black);
+    box-shadow: 0 1.5px 2px rgba(221, 221, 221, 0.41);
+    border-radius: 6px;
+}
+
+.ContentMenuHambergur {
+    overflow-x: hidden;
+    max-height: 90%;
+}
+
+.ContentMenuHambergur::-webkit-scrollbar {
+    width: 4px;
+}
+
+.ContentMenuHambergur .TitleContainerMenu {
+    border-radius: 0;
+}
+
+.ContentMenuHambergur .TitleContainerMenu i {
+    font-size: 115%;
+}
+
+.ContentMenuHambergur .ContainerCoinAndInfo {
+    margin: 5px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.ContentMenuHambergur .ContainerIntroductionCode {
+    display: block;
+}
+
+.ContentMenuHambergur .TitleInfoIntroductionCode {
+    display: block;
+    text-align: right;
+    margin-bottom: 4px;
+}
+
+.ContentMenuHambergur .IntroductionCode {
+    width: 90%;
+}
+
+.ContentMenuHambergur .ContainerBtnsMenu {
+    margin-top: 30px;
+    padding: 0;
+}
+
+.ContentMenuHambergur .ContainerBtnChangeThemeMenu {
+    margin-top: -13px;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.ContentMenuHambergur #BtnChangeThemeMenu {
+    cursor: pointer;
+    font-size: 120%;
+    text-align: left;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(170, 170, 170, 0.3);
+}
+
+.ContentMenuHambergur .ContainerCoinAndInfo {
+    text-align: right;
+}
+
+.ContentMenuHambergur .ContainerCoinAndInfo span {
+    font-size: 90%;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+
+.ContentMenuHambergur .ContainerCoinAndInfo p {
+    font-size: 90%;
+    color: #ff9389;
+}
+
+
+.ContentMenuHambergur .ContainerBtnsMenu button {
+    padding: 16px;
+}
+
+
+#BtnHamburgerMenu {
+    height: 40px;
+    width: 32px;
+    border-radius: 4px;
+    padding: 0;
+    cursor: pointer;
+    display: none;
+}
+
+#BtnHamburgerMenu button {
+    width: 100%;
+    height: 4px;
+    border: none;
+    top: -7px;
+    position: relative;
+    background: #444444;
+    border-radius: 4px;
+}
+
+#BtnHamburgerMenu button:after {
+    content: "";
+    width: 85%;
+    height: inherit;
+    right: 0;
+    bottom: -12px;
+    z-index: 2;
+    border-radius: inherit;
+    position: absolute;
+    background: inherit;
+}
+
+#BtnHamburgerMenu button:before {
+    content: "";
+    width: 75%;
+    height: inherit;
+    right: 0;
+    bottom: -24px;
+    z-index: 2;
+    border-radius: inherit;
+    position: absolute;
+    background: inherit;
+}
+
+
+.FooterBase {
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 1500px ) {
+    .ContainerContent {
+        width: 80%;
+    }
+
+    .ContainerMenu {
+        width: 16%;
+    }
+}
+
+@media screen and (max-width: 1330px) {
+    .ItemCountSeenForm {
+        width: 47% !important;
+    }
+
+    .ItemCountSubmitForm {
+        width: 47% !important;
+    }
+
+    .ContianerFormInfo {
+        display: block;
+        padding: 0 40px;
+        padding-bottom: 20px;
+    }
+
+    .ImageDesignCompleteInfo {
+        width: 80%;
+        max-width: 600px;
+    }
+
+    .FormInfo {
+        margin-top: -50px;
+    }
+
+    .ContainerIntroductionCode {
+        width: 80%;
+        margin: 10px auto !important;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    #BtnChangeTheme {
+        display: none;
+    }
+
+    #BtnHamburgerMenu {
+        display: block;
+    }
+
+    .Container {
+        padding-top: 0;
+    }
+
+    .ContainerMenu {
+        display: none;
+    }
+
+    .ContainerContent {
+        width: 100%;
+        margin: 0;
+        margin-top: 60px;
+    }
+
+    .ContainerHeaderContent {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .ContainerInputSearchForm {
+        width: 70%;
+        margin: auto;
+    }
+
+    .ContentMenuHambergur .ContainerIntroductionCode {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .CreateFastForm {
+        display: block;
+    }
+
+    .ContainerBuyCoin {
+        margin: 15px auto !important;
+        transform: translateY(0) !important;
+    }
+    
+    #ContainerContentDoesNotExistsForms {
+    width: 60%;
+    margin: 20px auto;
+    }
+    
+    .ContainerImageDesignFormsCreated{
+        display:none;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .ContainerContent .ContainerCoinAndInfo {
+        display: none !important;
+    }
+
+    .ContainerInputSearchForm {
+        width: 90%;
+    }
+
+    .ContainerInputSearchForm i {
+        transform: none;
+        margin-top: 14px;
+    }
+
+    .ItemFormInput {
+        width: 95%;
+    }
+
+    .FormInfo .ContainerIntroductionCode > div {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    
+    #ContainerContentDoesNotExistsForms {
+        width: 80%;
+        margin: 90px auto;
+    }
+    
+    .ContainerInputSearchForm {
+        width: 85%;
+    }
+
+    .ContainerHeaderFormCreated {
+        display: block;
+    }
+
+    .ContainerHeaderFormCreated > div {
+        text-align: left;
+        box-shadow: none;
+        background: rgba(238, 238, 238, 0.1);
+        border-radius: 0;
+    }
+
+    .ContainerPayAndSubmitCreateForm {
+        width: 100%;
+        display: block;
+    }
+
+    #BtnSubmitFormCreate_Form {
+        width: 100%;
+        margin: auto;
+        margin-top: 8px;
+    }
+
+    .Text_CreateFormFast {
+        font-size: 170%;
+        margin-top: 10px;
+        width: 100%;
+        padding: 0;
+    }
+
+    .ContainerNotePay {
+        display: block;
+    }
+
+    .TitleFormCreated {
+        width: 40%;
+    }
+
+    .ItemCountSubmitForm, .ItemCountSeenForm {
+        width: 90% !important;
+    }
+
+    .ContianerFormInfo {
+        padding: 0;
+    }
+
+    .ImageDesignCompleteInfo {
+        width: 100%;
+    }
+
+    .FormInfo {
+        width: 100%;
+    }
+
+    .ItemForm {
+        width: 100% !important;
+    }
+
+    .ItemFormInput {
+        width: 100%;
+    }
+
+    .ContainerIntroductionCode {
+        width: 100%;
+    }
+
+    .ContainerBtnSubmitInfo {
+        text-align: center;
+        width: 100%;
+    }
+
+    #BtnSubmitInfo {
+        width: 100%;
+    }
+
+    .ContainerTransacation {
+        font-size: 95%;
+    }
+
+    .ContainerSpendCoinsTransaction, .ContainerBuyCoinsTransaction {
+        width: 95%;
+        margin-top: 25px;
+    }
+
+    .ContainerImageCoinsForDesign {
+        width: 90%;
+    }
+
+    .FormInfo .ContainerIntroductionCode > div {
+        width: 95%;
+    }
+}
+

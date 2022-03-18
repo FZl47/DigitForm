@@ -1,0 +1,369 @@
+
+body {
+    background: #fafafa;
+    overflow-x: hidden;
+}
+
+.Header {
+    background: #ffffff;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.Header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.AboutForm {
+    display: inline-block;
+    margin: 0 2px;
+    padding: 4px 15px;
+    border-radius: 5px;
+}
+
+.AboutSeenForm {
+    background: rgba(197, 234, 255, 0.15);
+    color: #497fd5;
+    border: 1px solid rgba(116, 156, 213, 0.2);
+    font-size: 90%;
+    margin-right: 15px;
+}
+
+.AboutSubmitForm {
+    background: rgba(172, 255, 203, 0.15);
+    color: #21cb62;
+    border: 1px solid rgba(25, 220, 110, 0.2);
+    margin-left: 15px;
+    font-size: 90%;
+}
+
+.AboutFormView {
+    padding: 0;
+}
+
+.AboutFormView a {
+    color: #479eff;
+}
+
+.AboutFormSettings {
+    padding: 0;
+    padding-left: 15px;
+    border-left: 2px dashed rgba(170, 170, 170, 0.4);
+    border-radius: 0;
+}
+
+
+.AboutFormSettings a {
+    color: #444444;
+}
+
+.AboutForm p {
+    margin: 0;
+    display: inline-block;
+}
+
+
+.Container {
+    margin-bottom: 40px;
+}
+
+.CotnainerRecord {
+    margin: 10px;
+    background: #fffefd;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(170, 170, 170, 0.2);
+}
+
+.CotnainerRecord > div {
+    margin: 10px;
+}
+
+.CotnainerRecords {
+    margin: 10px;
+}
+
+.CotnainerRecords > div {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(170, 170, 170, 0.2);
+    background: #fffefd;
+    overflow: hidden;
+}
+
+.Records {
+    height: 500px;
+    overflow-y: auto;
+}
+
+.RecordsEmpty {
+    color: #ff7269;
+    margin-top: 20%;
+    text-align: center;
+}
+
+.RecordsEmpty h4 {
+    text-align: center;
+}
+
+.RecordsEmpty img {
+    width: 60%;
+    height: auto;
+    opacity: .85;
+}
+
+.Record {
+    margin: 0;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px 5px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Record:last-of-type {
+    border-bottom: none;
+}
+
+.Record > div {
+    display: inline-block;
+}
+
+.Record p {
+    margin: 0;
+}
+
+.Record .ValueInfoRecord {
+    margin-top: 3px;
+    font-size: 80%;
+}
+
+.Record a {
+    font-size: 150%;
+    padding: 0 10px;
+    transition: all .15s;
+}
+
+.Record a:hover {
+    padding-left: 7px;
+}
+
+.Record:hover {
+    background: #f9f9f9;
+}
+
+.Records::-webkit-scrollbar {
+    width: 3px;
+    height: 5px;
+}
+
+.Records::-webkit-scrollbar-track {
+    background: #d4d4d4;
+    margin-right: 2px;
+}
+
+.Records::-webkit-scrollbar-thumb {
+    background: #333333;
+}
+
+.Records::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.ContainerTitle {
+    font-size: 180%;
+    color: #333333;
+    margin: 0 !important;
+    border-radius: inherit;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.ContainerTitle p {
+    margin: 0;
+    margin-top: 7px;
+    padding: 1px 8px;
+    display: inline-block;
+    border-right: 4px solid var(--ColorBase);
+}
+
+
+#ContainerSendMessage {
+    margin: 0;
+    overflow: hidden;
+}
+
+#ContainerSendMessage form {
+    margin: 20px 0;
+}
+
+.ContainerDescriptionSendMessage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px auto;
+    height: 110px;
+    background: linear-gradient(to right, rgba(255, 241, 190, 0.6), rgba(255, 255, 255, 0.4));
+    border-radius: 200px 130px 40px 30px;
+}
+
+.ContainerDescriptionSendMessage img {
+    transform: translateY(-15px) translateX(-40px) scale(1.5);
+}
+
+.ContainerDescriptionSendMessage p {
+    margin: 0;
+    color: #555555;
+    font-size: 140%;
+    font-family: 'MjCasablancaHeavy';
+}
+
+#ContainerForm {
+    text-align: center;
+    margin: 0;
+}
+
+.InfoRecord {
+    margin: auto;
+    background: #ffffff;
+    padding: 5px 7px;
+    border-radius: 5px;
+    border: 1px dashed rgba(170, 170, 170, 0.3);
+    box-shadow: 0 5px 15px rgba(238, 238, 238, 0.4);
+}
+
+.InfoRecord > div {
+    margin-bottom: 20px;
+}
+
+.InfoRecord > div:last-of-type {
+    margin-bottom: 0;
+}
+
+.InfoRecord > div > p {
+    display: inline-block;
+    margin: 0;
+}
+
+.TitleInfoRecord {
+    font-size: 80%;
+    color: #888888;
+    width: 70px;
+    text-align: center;
+}
+
+.ValueInfoRecord {
+    font-size: 90%;
+    color: #333333;
+    text-align: center;
+}
+
+.PAGE_FORM {
+    min-height: 300px;
+    display: block;
+    padding: 0 !important;
+    box-shadow: 0 3px 20px rgba(170, 170, 170, 0.15);
+    margin: 20px auto;
+    border-radius: 7px;
+    border: 1px dashed rgba(170, 170, 170, 0.3);
+}
+
+.QUESTION_BOX {
+    overflow: hidden !important;
+}
+
+.CounterNumberPage {
+    font-size: 50%;
+    color: inherit;
+    background: #ffffff;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.SCORE_QUESTION {
+    color: #666666;
+    font-size: 75%;
+}
+
+.INPUT_RADIO_SELECT:checked + * {
+    font-weight: bold;
+}
+
+.INPUT_CHECKBOX_SELECT:checked + * {
+    font-weight: bold;
+}
+
+.QUESTION_ANSWERED_CORRECTLY__SCORE {
+    font-size: 110%;
+    color: #00e9a2;
+    margin-bottom: 3px;
+}
+
+
+.QUESTION_ANSWERED_CORRECTLY__INPUT {
+    position: relative !important;
+}
+
+.QUESTION_ANSWERED_CORRECTLY__INPUT:before {
+    content: "✔";
+    font-size: 90%;
+    display: inline-block;
+    position: absolute !important;
+    text-align: center;
+    top: 5px;
+    right: 5px;
+    padding-top: 2px;
+    width: 20px;
+    height: 20px;
+    z-index: 3;
+    border-radius: 50%;
+    background: var(--ColorBase);
+    color: #ffffff;
+}
+
+[Trash] {
+    color: #ff495a;
+    font-size: 105%;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+[Trash]:hover {
+    color: #e24252;
+}
+
+[Trash]:active {
+    font-size: 100%;
+}
+
+
+@media screen and (max-width: 500px) {
+    .Header > div {
+        display: block;
+    }
+
+    .Header > div div:last-of-type {
+        text-align: left;
+        margin-top: 5px;
+    }
+
+    .ContainerDescriptionSendMessage p {
+        font-size: 110%;
+    }
+
+    #InputSendMessage {
+        width: 100%;
+    }
+
+    .ItemForm {
+        width: 95% !important;
+    }
+
+    #BtnSendMessage {
+        width: 100%;
+    }
+
+}

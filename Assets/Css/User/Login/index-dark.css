@@ -1,0 +1,53 @@
+body {
+    background: var(--Compl-Black);
+}
+
+.Container {
+    background: var(--Compl-Black);
+    box-shadow: 0 5px 15px rgba(34, 34, 34, 0.3);
+    /*box-shadow: none;*/
+}
+
+.ContainerHeader button{
+    background: none;
+    color: #e0e0e0;
+}
+
+.ContainerHeader button:hover{
+    color: #ffffff;
+}
+
+.ContainerForm {
+    background: #444444;
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #353535;
+}
+
+.ContainerForm .ItemFormInput {
+    background: #eeeeee;
+}
+
+.ItemFormInputFocus {
+    box-shadow: 1px 0 8px var(--ColorBase) !important;
+}
+
+.LabelInput {
+    color: #eeeeee;
+}
+
+#BtnSwitchForms {
+    background: #ffffff;
+}
+
+#TextStatusFormRegister {
+    color: #ff6c7a;
+    background: #ffdfdc;
+    border: 1px dashed #ff6c7a;
+}
+
+#TextStatusFormLogin {
+    color: #ff6c7a;
+    background: #ffdfdc;
+    border: 1px dashed #ff6c7a;
+}

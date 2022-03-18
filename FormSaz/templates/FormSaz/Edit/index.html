@@ -1,0 +1,54 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load static %}
+{% load FilterTags %}
+{% block Title %}
+    Edit
+{% endblock %}
+
+{% block Css %}
+    <link rel="stylesheet" href="{% static 'Css/Base/Footer/index.css' %}">
+    <link rel="stylesheet" href="{% static 'FormSaz/Css/StyleBase.css' %}">
+    <link rel="stylesheet" href="{% static 'FormSaz/Css/Animations.css' %}">
+    <link rel="stylesheet" href="{% static 'FormSaz/Css/Creator/IndexCreator.css' %}">
+{% endblock %}
+
+{% block Content %}
+    {% include 'FormSaz/TemplateBase/TemplateCreator/index.html' %}
+    {% include 'Base/Footer/index.html' %}
+{% endblock %}
+
+{% block Js %}
+    <script>
+        let _Form = JSON.parse('{{ Form_JSON|escapejs }}')
+        let _ConfigForm = JSON.parse(_Form.GetConfig)
+        let _ID_FORM = _Form.ID_FORM
+        let _TypeForm = '{{ Form.Type }}'
+    </script>
+    <script src="{% static 'FormSaz/Js/IndexBase.js' %}"></script>
+    <script src="{% static 'FormSaz/Js/ModelsBase.js' %}"></script>
+    {% if Form.Type == 'Quiz' %}
+        <script src="{% static 'FormSaz/Js/FormQuiz/ModelsQuiz.js' %}"></script>
+        <script src="{% static 'FormSaz/Js/FormQuiz/IndexBase.js' %}"></script>
+    {% endif %}
+    <script>
+        // Initial First Elements //
+        let FORM = new FORM_BASE(_Form)
+        FORM.Config.ConfigSettings = _ConfigForm
+
+        {% for Page in Form.GetPages %}
+            var __Page = new PAGE_ELEMENT()
+            var __PageJSON = JSON.parse('{{ Page.GetJSON|escapejs }}')
+            __Page.id = __PageJSON.ID_Element
+            __Page.Config.ConfigSettings = __PageJSON.Config
+            __Page.Style.StyleSettings = __PageJSON.Style
+            __Page.Config.__Load_Config()
+            __Page.Style.__Load_Styles()
+            for (let Element of __PageJSON.GetElementsCLASS_JSON) {
+                CreateElement(Element)
+            }
+        {% empty %}
+            new PAGE_ELEMENT()
+        {% endfor %}
+
+    </script>
+{% endblock %}

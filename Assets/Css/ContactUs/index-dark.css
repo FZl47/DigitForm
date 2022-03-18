@@ -1,0 +1,58 @@
+
+body {
+    background: var(--Compl-Black);
+}
+
+#ImageDesignBackground {
+    opacity: .3;
+}
+
+.ContainerContactUs {
+    background: #404040;
+    box-shadow: 0 6px 12px rgba(50, 50, 50, 0.4);
+}
+
+.ContainerContactUs:after {
+    display: none;
+}
+
+.ContainerContactUs:before {
+    display: none;
+}
+
+.TextDesciprtionContactUs {
+    color: #f0f0f0;
+}
+
+.ContianerSocialMedia {
+    background: #353535;
+    box-shadow: 1px 0 4px rgba(34, 34, 34, 0.8);
+}
+
+.LabelInput {
+    color: #eeeeee;
+}
+
+.ItemFormInput {
+    background: #383838;
+}
+
+.ItemFormInput input {
+    color: #ffffff;
+}
+
+.ItemFormInput textarea {
+    color: #ffffff;
+}
+
+input::placeholder {
+    color: #bbbbbb;
+}
+
+textarea::placeholder {
+    color: #bbbbbb;
+}
+
+.ItemFormInputFocus {
+    background: #303030;
+}

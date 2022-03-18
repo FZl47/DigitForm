@@ -1,0 +1,21 @@
+
+body{
+    background: var(--Compl-Black);
+}
+
+
+#ImageDesignBackground{
+    opacity: .12;
+}
+
+.ContentLearn{
+    background: #383838;
+    box-shadow: 0 8px 12px rgba(37, 37, 37, 0.8);
+}
+
+.TextStep{
+    background: #333333;
+    box-shadow: none;
+    color: #f0f0f0;
+    border: 1px solid #999999;
+}

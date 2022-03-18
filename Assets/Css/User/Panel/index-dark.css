@@ -1,0 +1,250 @@
+body {
+    background: var(--Compl-Black);
+}
+
+.ContainerContent {
+    background: var(--Compl-Black);
+}
+
+.ContainerMenu {
+    background: #333333;
+    color: #eeeeee;
+    box-shadow: -1px 1px 25px rgba(28, 28, 28, 0.9);
+}
+
+.ContainerMenu:after {
+    display: none;
+}
+
+.ContainerMenu:before {
+    display: none;
+}
+
+.TitleContainerMenu {
+    background: var(--Compl-GreenLight);
+    color: #333333;
+}
+
+.TitleContainerMenu i {
+    font-weight: bold;
+}
+
+.ContainerBtnsMenu button {
+    color: var(--Compl-GreenLight);
+}
+
+.ActiveBtnMenu::before {
+    background: var(--Compl-Yellow) !important;
+}
+
+.ContainerMainContent {
+    background: var(--Compl-Black);
+    box-shadow: 0 1px 25px rgba(34, 34, 34, 0.9);
+    border-radius: 10px;
+}
+
+.ContainerHeaderContent {
+    background: #404040;
+    box-shadow: 0 3px 12px rgba(34, 34, 34, 0.5);
+    border-radius: 7px;
+}
+
+.ContainerInputSearchForm {
+    background: #383838;
+    color: #f2f2f2;
+    box-shadow: none;
+}
+
+.ContainerInputSearchForm input {
+    background: inherit;
+    color: inherit;
+}
+
+.ContainerInputSearchForm input::placeholder {
+    color: #aaaaaa;
+}
+
+.ContainerInputSearchForm i {
+    color: inherit;
+}
+
+.ContainerInputSearchForm:hover {
+    box-shadow: 0 2px 5px #222222;
+}
+
+.ContainerCoinAndInfo {
+    color: #f2f2f2;
+}
+
+.ContainerCoinAndInfo span {
+    box-shadow: none;
+}
+
+.ContainerTitle {
+    background: #383838;
+    box-shadow: 0 2px 2px rgba(34, 34, 34, 0.3);
+    color: var(--Compl-Yellow);
+    border-radius: 2px;
+}
+
+.Text_CreateFormFast {
+    background: none;
+}
+
+.TextNoteBuyCoin {
+    color: #ffffff;
+}
+
+.ContainerBuyCoin {
+    background: var(--Compl-Black) !important;
+    border: 1px solid #aaaaaa;
+}
+
+.ContainerBuyCoin[TypeModel='Gold'] {
+    transform: translateY(-20px);
+    box-shadow: 0 5px 15px rgba(223, 228, 167, 0.5);
+}
+
+.ContainerBuyCoin[TypeModel='Bronze'] {
+    box-shadow: 0 5px 15px rgba(211, 214, 201, 0.5);
+}
+
+.ContainerBuyCoin[TypeModel='Silver'] {
+    box-shadow: 0 5px 15px rgba(209, 206, 228, 0.5);
+}
+
+.TitleContianerBuyCoin {
+    color: #f5f5f5;
+}
+
+.ValueCoinsContainerBuyCoin {
+    box-shadow: none;
+}
+
+.PriceContainerBuytCoin {
+    background: #f5f5f5;
+    color: var(--Compl-Black);
+    box-shadow: none;
+}
+
+.BtnContainerBuyCoin {
+    box-shadow: none;
+}
+
+.TitleContainerTransaction {
+    color: #f0f0f0;
+}
+
+.ContainerTransacation table {
+    background: #444444;
+    box-shadow: 0 1px 6px #333333;
+}
+
+.ContainerTransacation table th {
+    background: #c3ffdf;
+    color: var(--Compl-Black);
+}
+
+.ContainerTransacation table td {
+    color: #f0f0f0;
+}
+
+.ContainerImageCoinsForDesign:after {
+    display: none;
+}
+
+.ContainerImageCoinsForDesign img {
+    transform: rotate(-2deg);
+}
+
+.LabelInput {
+    color: #f2f2f2;
+}
+
+.ItemFormInput {
+    background: #dddddd;
+}
+
+.FormCreated {
+    background: #333333;
+    box-shadow: 0 1px 8px #222222;
+}
+
+.TitleFormCreated {
+    color: #f2f2f2;
+}
+
+.DescriptionFormCreated {
+    color: #bbbbbb;
+}
+
+.ContianerItemsFormCreated > div i {
+    opacity: .7 !important;
+}
+
+.ItemCountSubmitForm {
+    color: var(--ColorBase);
+}
+
+.ItemCountSeenForm {
+    color: #26c2ff;
+}
+
+.ContainerImageDesignFormsCreated img:last-child {
+    opacity: .2;
+    filter: drop-shadow(0 0 15px rgba(255, 8, 20, 0.4));
+}
+
+.ContainerTitleSearchFormCreated p:first-child {
+    color: #dddddd;
+}
+
+#ResultSearchForm {
+    color: rgb(255, 141, 130);
+}
+
+#ContainerImageNoFormSearchResult p {
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+
+.FormInfo .ContainerIntroductionCode {
+    padding: 5px 10px;
+    display: block;
+    margin: 10px 0;
+    background: rgba(238, 238, 238, 0.15);
+    color: #ffffff;
+    border: 1px dashed #cccccc;
+    border-radius: 7px;
+}
+
+#ContainerContentDoesNotExists p {
+    color: #ffffff;
+}
+
+#ContainerContentDoesNotExistsForms p {
+    color: #ffffff !important;
+}
+
+#BtnHamburgerMenu button {
+    background: var(--ColorBase);
+}
+
+
+.ContainerHeaderFormCreated i[BtnCopyLinkFormCreate] {
+    color: #f0f0f0;
+}
+
+.ContentMenuHambergur .TitleInfoIntroductionCode{
+    color: #eeeeee;
+}
+
+.ContentMenuHambergur .ContainerInfoBottomMenu{
+    color: #ffffff;
+}
+
+#BtnChangeThemeMenu{
+    background: var(--Compl-Black)!important;
+}
+
