@@ -1,0 +1,279 @@
+
+body {
+    background: linear-gradient(230deg, var(--Compl-GreenLight), var(--ColorBase));
+    min-height: 100vh;
+}
+
+.Container {
+    margin: auto;
+    background: #ffffff;
+    border-radius: 0 0 50px 50px;
+    box-shadow: -5px 5px 20px rgba(170, 170, 170, 0.3);
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.ContainerHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.ContainerHeader button {
+    border: none;
+    background: none;
+    border-radius: 20px;
+    padding: 7px 20px;
+    background: rgba(234, 238, 236, 0.3);
+    transition: all .1s;
+    color: #555555;
+}
+
+.ContainerHeader button:hover {
+    color: var(--ColorBase);
+}
+
+.Logo {
+    width: 30px;
+}
+
+.ContainerHeader p {
+    display: inline-block;
+    margin: 0;
+}
+
+.ContianerContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 88%;
+    border-radius: inherit;
+    text-align: center;
+}
+
+.ContainerImageDesign {
+    width: 50%;
+}
+
+.ContainerImageDesign img {
+    width: 100%;
+    height: auto;
+}
+
+.ContainerForm {
+    width: 35%;
+    margin: auto;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+}
+
+.ContainerForm > form > div {
+    margin: 7px auto;
+}
+
+.ContainerForm input::placeholder {
+    font-size: 85%;
+}
+
+.ContainerTitleForm {
+    margin-top: 15px;
+    font-size: 350%;
+    font-family: 'KalameBlack';
+    text-align: center;
+}
+
+#TextStatusFormLogin {
+    width: 80%;
+    margin: 20px auto;
+    padding: 5px;
+    border-radius: 3px;
+    background: rgba(255, 74, 77, 0.1);
+    border: 1px dashed rgba(255, 79, 82, 0.7);
+    color: #ff4f52;
+    animation: AnimationTextStatusForm .5s forwards;
+    transform: translateY(-10px);
+    opacity: .5;
+}
+
+
+#TextStatusFormRegister {
+    width: 80%;
+    margin: 20px auto;
+    padding: 5px;
+    border-radius: 3px;
+    background: rgba(255, 74, 77, 0.1);
+    border: 1px dashed rgba(255, 79, 82, 0.7);
+    color: #ff4f52;
+    animation: AnimationTextStatusForm .5s forwards;
+    transform: translateY(-10px);
+    opacity: .5;
+}
+
+@keyframes AnimationTextStatusForm {
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.ContainerRememberMe {
+    text-align: left;
+    background: none;
+    display: block;
+    box-shadow: none;
+    width: 80%;
+    margin: 15px auto !important;
+}
+
+.ContainerRememberMe > div {
+    display: inline-block;
+    width: auto;
+    background: #ff8079;
+    box-shadow: 0 2px 2px rgba(255, 128, 121, 0.21);
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.ContainerRememberMe p {
+    color: #ffffff;
+}
+
+.InputRememberME {
+    box-shadow: none;
+}
+
+.ContianerBtnSubmit {
+    text-align: center;
+    width: 90%;
+    margin: auto auto;
+}
+
+.ContianerBtnSubmit button {
+    width: 150px;
+}
+
+.ContainerBtnSwitchForms {
+    text-align: center;
+    padding-top: 15px;
+    width: 60%;
+    margin: 15px auto;
+    border-top: 1px solid var(--Compl-Blue);
+}
+
+#BtnSwitchForms {
+    color: rgb(5, 125, 178);
+    font-size: 85%;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 20px;
+    transition: all .15s;
+}
+
+#BtnSwitchForms:hover {
+    background: #f8f8f8;
+    color: #0c36b2;
+}
+
+#FormRegister {
+    transition: all .3s;
+}
+
+#FormLogin {
+    transition: all .3s;
+}
+
+.FormLoginActive {
+    visibility: visible;
+    transform: translateY(0);
+    height: auto;
+    opacity: 1;
+}
+
+.FormRegisterActive {
+    visibility: visible;
+    transform: translateY(0);
+    height: auto;
+    opacity: 1;
+}
+
+
+.FormLoginDisabled {
+    transform: translateY(-200px);
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+}
+
+.FormRegisterDisabled {
+    transform: translateY(200px);
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+}
+
+
+#BtnChangeTheme {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .ContainerImageDesign {
+        width: 45%;
+    }
+
+    .ContainerForm {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .Container {
+        border-radius: 0 0 30px 30px;
+    }
+
+    .ContainerImageDesign {
+        display: none;
+    }
+
+    .ContainerForm {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .ContainerForm {
+        width: 85%;
+    }
+}
+
+
+@media screen and (max-width: 440px) {
+
+    .ContainerHeader {
+        padding: 10px 0;
+    }
+
+    .ContainerForm {
+        width: 98%;
+    }
+
+    .ItemFormInput {
+        width: 98%;
+    }
+
+    .ContainerRememberMe {
+        width: 98%;
+    }
+
+    .LabelInput{
+        margin-right: 5px;
+    }
+}
+

@@ -1,0 +1,503 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load static %}
+{% load FilterTags %}
+{% block Title %}
+    پنل کاربری
+{% endblock %}
+
+
+{% block Link %}
+    {#    <link rel="stylesheet" href="{% static 'Css/Base/Header/index.css' %}">#}
+    <link rel="stylesheet" href="{% static 'Css/Base/Footer/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/User/Panel/index.css' %}">
+{% endblock %}
+
+
+
+{% block Content %}
+    <div class="ContainerMenuHamburger MenuIsClose" id="ContainerMenuHamburger">
+        <div class="ContentMenuHambergur">
+            <div>
+                <div>
+                    <div class="TitleContainerMenu">
+                        <p>داشبورد</p>
+                        <i class="far fa-tachometer"></i>
+                    </div>
+                    <div class="ContainerBtnChangeThemeMenu">
+                        <i class="fa fa-moon" id="BtnChangeThemeMenu"></i>
+                    </div>
+                    <div class="ContainerCoinAndInfo d-block p-0 m-0">
+                        <p>{{ User.NameAndFamily|truncatechars:15 }}</p>
+                        <span class="d-block w-75 mx-auto">
+                            {{ User.Coins }} سکه
+                            <i class="fa fa-coins"></i>
+                        </span>
+                    </div>
+                    <div class="ContainerIntroductionCode">
+                        <p class="TitleInfoIntroductionCode">کد معرفی :</p>
+                        <p class="IntroductionCode" data-toggle="tooltip" data-placement="top"
+                           ClickFunc="SetTextInClipBoard({{ User.IntroductionCode }})"
+                           title="شما با معرفی دیجیت فرم به اشنایان خود کمک بزرگی به ما میکنید و همینطور میتوانید با اشتراک گذاری کد معرفی خود به دوستانتان و  ثبت نام انها 200 سکه  از دیجیت فرم هدیه بگرید">{{ User.IntroductionCode }}</p>
+                    </div>
+                    <div class="ContainerBtnsMenu">
+                        <button BtnClickActivePage="CreateForm">
+                            ایجاد فرم
+                            <i class="far fa-plus-octagon"></i>
+                        </button>
+                        <button BtnClickActivePage="FormsCreated">
+                            فرم های ایجاد شده
+                            <i class="far fa-file-check"></i>
+                        </button>
+                        <button BtnClickActivePage="ManagementCoin">
+                            مدیریت سکه ها
+                            <i class="far fa-coins"></i>
+                        </button>
+                        <button BtnClickActivePage="Info">
+                            اطلاعات شخصی
+                            <i class="far fa-info-circle"></i>
+                        </button>
+                        <button ClickFunc="GoToUrl(/)">
+                            خانه
+                            <i class="far fa-home"></i>
+                        </button>
+                        <button ClickFunc="SignOutAccount()">
+                            خروج
+                            <i class="far fa-sign-out"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="ContainerInfoBottomMenu">
+                    <div>
+                        قدرت گرفته از <a href="https://codevar.ir" class="ColorBase">کدوار</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Container">
+        <div class="ContainerMenu">
+            <div>
+                <div>
+                    <div class="TitleContainerMenu">
+                        <p>داشبورد</p>
+                        <i class="far fa-tachometer"></i>
+                    </div>
+                    <div class="ContainerIntroductionCode">
+                        <p class="TitleInfoIntroductionCode">کد معرفی :</p>
+                        <p class="IntroductionCode" data-toggle="tooltip" data-placement="top"
+                           ClickFunc="SetTextInClipBoard({{ User.IntroductionCode }})"
+                           title="شما با معرفی دیجیت فرم به اشنایان خود کمک بزرگی به ما میکنید و همینطور میتوانید با اشتراک گذاری کد معرفی خود به دوستانتان و  ثبت نام انها 200 سکه  از دیجیت فرم هدیه بگرید">{{ User.IntroductionCode }}</p>
+                    </div>
+                    <div class="ContainerBtnsMenu">
+                        <button BtnClickActivePage="CreateForm">
+                            ایجاد فرم
+                            <i class="far fa-plus-octagon"></i>
+                        </button>
+                        <button BtnClickActivePage="FormsCreated">
+                            فرم های ایجاد شده
+                            <i class="far fa-file-check"></i>
+                        </button>
+                        <button BtnClickActivePage="ManagementCoin">
+                            مدیریت سکه ها
+                            <i class="far fa-coins"></i>
+                        </button>
+                        <button BtnClickActivePage="Info">
+                            اطلاعات شخصی
+                            <i class="far fa-info-circle"></i>
+                        </button>
+                        <button ClickFunc="GoToUrl(/)">
+                            خانه
+                            <i class="far fa-home"></i>
+                        </button>
+                        <button ClickFunc="SignOutAccount()">
+                            خروج
+                            <i class="far fa-sign-out"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="ContainerInfoBottomMenu">
+                    <div>
+                        قدرت گرفته از <a href="https://codevar.ir" class="ColorBase">کدوار</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ContainerContent">
+            <div class="ContainerHeaderContent">
+                <div>
+                    <i class="fa fa-moon" id="BtnChangeTheme"></i>
+                    <div id="BtnHamburgerMenu">
+                        <button></button>
+                    </div>
+                </div>
+                <div class="ContainerInputSearchForm">
+                    <input type="text" id="InputSearchFrom" placeholder=" فرم خود را جست و جو کنید ">
+                    <i class="far fa-search"></i>
+                </div>
+                <div class="ContainerCoinAndInfo">
+                    <p>{{ User.NameAndFamily|truncatechars:12|NoneVal:'' }}</p>
+                    <span>
+                         {{ User.Coins }} سکه
+                        <i class="fa fa-coins"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="ContainerMainContent d-none" ContainerPage id="Container_CreateForm">
+                <div class="ContainerTitle">
+                    <p>ایجاد فرم</p>
+                </div>
+                <div class="CreateFastForm">
+                    <img src="{% static 'Img/User/Panel/Create_Fast_Form_Red.jpg' %}" class="col-12 col-md-8 col-lg-5"
+                         alt="Create Fast Form">
+                    <div class="col-12 col-md-12 col-lg-7">
+                        <p class="Text_CreateFormFast">با دیجیت فرم هرجوری که دوست داری فرم خودتو بساز</p>
+                        <form action="/FormSaz/CreateFormUrl" method="post" id="FormCreate_Form"
+                              class="col-12 col-sm-11 mx-auto mt-5">
+                            {% csrf_token %}
+                            <div class="ItemForm">
+                                <p class="LabelInput">عنوان :</p>
+                                <div class="ItemFormInput">
+                                    <input type="text" name="Title" placeholder="عنوان فرم خود را بنویسید" InputForm
+                                           SetIn="Icon" Bigger="2" Less="150" CheckInputVal>
+                                    <i class="far fa-times-circle"></i>
+                                </div>
+                            </div>
+                            <div class="ItemForm">
+                                <p class="LabelInput">توضیحات(اختیاری) :</p>
+                                <div class="ItemFormInput">
+                                    <textarea type="text" name="Description" placeholder="توضیحات فرم خود را بنویسید"
+                                              InputForm
+                                              SetIn="Icon" Bigger="-1" Less="3000"
+                                              CheckInputVal></textarea>
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="ItemForm">
+                                <p class="LabelInput">نوع فرم :</p>
+                                <div class="ItemFormInput">
+                                    <select name="Type">
+                                        <option value="Customize">شخصی سازی</option>
+                                        <option value="Quiz">امتحانی</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="ContainerPayAndSubmitCreateForm">
+                                <div class="ContainerNotePay">
+                                    <p>
+                                        با ساخت این فرم 200 سکه از شما کم میشود
+                                        <i class="fa fa-coins"></i>
+                                    </p>
+                                </div>
+                                <button id="BtnSubmitFormCreate_Form" type="button" class="BtnStyle_1">ساخت فرم</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="ContainerMainContent d-none" ContainerPage id="Container_FormsCreated">
+                <div class="ContainerTitle">
+                    <p>فرم ها</p>
+                </div>
+                <div class="ContainerTitleSearchFormCreated d-none" id="ContainerTitleSearchFormCreated">
+                    <p>جست و جوی فرم :</p>
+                    <p id="ResultSearchForm"></p>
+                </div>
+                <div id="ContainerImageNoFormSearchResult" class="d-none col-12 col-sm-10 col-md-9 col-lg-5">
+                    <img src="/Assets/Img/User/Panel/File_Sad_2.jpg" alt="No Form">
+                    <p>چیزی یافت نشد</p>
+                </div>
+                <div class="ContainerFormsCreated">
+                    {% for Form in User.GetForms %}
+                        <div class="FormCreated col-12 col-md-11 col-lg-9 col-xl-5 mx-md-auto mx-lg-3 p-0"
+                             id="Form_{{ Form.id }}"
+                             TitleForm="{{ Form.Title|truncatechars:30 }}">
+                            <div class="ContainerHeaderFormCreated">
+                                <h4 class="TitleFormCreated">
+                                    {{ Form.Title|truncatechars:60 }}
+                                </h4>
+                                <div>
+                                    <i title="مشاهده فرم" class="fa fa-eye" BtnViewFormCreated
+                                       ClickFunc="GoToUrl(/View/{{ Form.ID_FORM }})"></i>
+                                    <i title="ساخت اجزای فرم" ClickFunc="GoToUrl(/FormSaz/Edit/{{ Form.ID_FORM }})"
+                                       class="fa fa-edit" BtnEditFormCreated></i>
+                                    <i title="کپی لینک" class="fa fa-clone"
+                                       ClickFunc="SetTextInClipBoard(http://{{ request.get_host }}/View/{{ Form.ID_FORM }})"
+                                       BtnCopyLinkFormCreate></i>
+                                    <i title="حذف فرم" class="fa fa-trash" BtnTrashFormCreated
+                                       ClickFunc="DeleteForm({{ Form.id }})"></i>
+                                    <p title="اعتبار فرم">{{ Form.GetExpiryDateSpan }}</p>
+                                </div>
+                            </div>
+                            <p class="DescriptionFormCreated">
+                                {{ Form.Description|truncatechars:300|NoneVal:'توضیحی وجود ندارد' }}
+                            </p>
+                            <div class="ContianerItemsFormCreated">
+                                <div class="ItemCountSubmitForm">
+                                    <i class="fa fa-file-check"></i>
+                                    <div>
+                                        <span>
+                                            تعداد ثبت فرم :
+                                        </span>
+                                        <p><strong>{{ Form.GetSubmitForm }}</strong></p>
+                                    </div>
+                                </div>
+                                <div class="ItemCountSeenForm">
+                                    <i class="fa fa-eye"></i>
+                                    <div>
+                                        <span>
+                                            تعداد بازدیدکنندگان :
+                                        </span>
+                                        <p><strong>{{ Form.GetSeenForm }}</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ContainerBtnsFormCreated">
+                                <a href="/FormSaz/View/{{ Form.ID_FORM }}">
+                                    <button class="BtnStyle_1_OutLine">بیشتر</button>
+                                </a>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div id="ContainerContentDoesNotExistsForms">
+                            <img src="/Assets/Img/User/Panel/File_Sad_2.jpg" alt="No Form">
+                            <p>چیزی یافت نشد</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="ContainerImageDesignFormsCreated" id="ContainerImageDesignFormsCreated">
+                    <img src="/Assets/Img/User/Panel/FormsCreated.jpg" alt="Forms in Laptop">
+                    <img src="/Assets/Img/Blobs/Blob_1.jpg" alt="Background Blob">
+                </div>
+            </div>
+            <div class="ContainerMainContent d-none" ContainerPage id="Container_ManagementCoin">
+                <div class="ContainerTitle">
+                    <p>سکه ها و اعتبار</p>
+                </div>
+                <h4 class="TextNoteBuyCoin">با خرید سکه و افزایش اعتبار حساب خود از فرم ها و امکانات <span
+                        class="ColorBase">دیجیت فرم</span> بهره مند
+                    شوید</h4>
+                <div class="ContainerContentManageCoins">
+                    {% for BuyCoin in BuyCoinModels %}
+                        <article class="ContainerBuyCoin col-9 col-sm-7 col-md-6 col-lg-3"
+                                 TypeModel="{{ BuyCoin.Type }}">
+                            <img src="/Assets/Img/User/Panel/GifCoin.gif" alt="Gif Coin">
+                            <h4 class="TitleContianerBuyCoin">
+                                {{ BuyCoin.Title }}
+                            </h4>
+                            <div class="ValueCoinsContainerBuyCoin">
+                                <p>
+                                    {{ BuyCoin.Coins }}
+                                    سکه
+                                    <i class="fa fa-coins"></i>
+                                </p>
+                                {% if BuyCoin.Coins_Gift|ValueIsNone == False %}
+                                    <span>+</span>
+                                    <p>
+                                        {{ BuyCoin.Coins_Gift }}
+                                        سکه هدیه
+                                        <i class="fa fa-coins"></i>
+                                    </p>
+                                {% endif %}
+                            </div>
+                            <div class="PriceAndBuyContainerBuyCoin">
+                                <div class="PriceContainerBuytCoin">
+                                    <p class="SplitNumber" Number="{{ BuyCoin.Price }}">{{ BuyCoin.Price }}</p>
+                                    <span>تومان</span>
+                                </div>
+                                <a href="/User/Panel/BuyCoin/{{ BuyCoin.id }}">
+                                    <button class="BtnContainerBuyCoin BtnStyle_1">
+                                        خرید
+                                        <i class="far fa-shopping-cart"></i>
+                                    </button>
+                                </a>
+                            </div>
+                        </article>
+                    {% endfor %}
+                    <div class="ContianerCoinInventory">
+                        <div>
+                            <p>موجودی سکه :</p>
+                            <p>
+                                {{ User.Coins }}
+                                سکه
+                                <i class="fa fa-coins"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ContainerTransacation">
+                    <div class="ContainerTitle">
+                        <p>تراکنش ها</p>
+                    </div>
+                    <div class="ContainerBuyCoinsTransaction">
+                        <p class="TitleContainerTransaction">
+                            افزایش سکه
+                        </p>
+                        <table>
+                            <tr>
+                                <th>شماره تراکنش</th>
+                                <th>زمان</th>
+                                <th>سکه</th>
+                                <th>سکه هدیه</th>
+                                <th>قیمت</th>
+                                <th>توضیحات</th>
+                            </tr>
+                            {% for Trans in User.GetPurchaseTransaction %}
+                                <tr>
+                                    <td>
+                                        {{ Trans.Ref_ID }}
+                                    </td>
+                                    <td title="{{ Trans.DateTimePurchase }}">
+                                        {{ Trans.GetTimePast }}
+                                    </td>
+                                    <td>
+                                        {{ Trans.Coins }}
+                                    </td>
+                                    <td>
+                                        {{ Trans.CoinsGift }}
+                                    </td>
+                                    <td>
+                                        <p class="SplitNumber" Number="{{ Trans.Price }}"></p>
+                                        <p> تومان </p>
+                                    </td>
+                                    <td>
+                                        {{ Trans.Description }}
+                                    </td>
+                                </tr>
+                            {% empty %}
+                                <tr class="Tr_Empty">
+                                    <td colspan="6">
+                                        موردی یافت نشد
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="ContainerSpendCoinsTransaction">
+                        <p class="TitleContainerTransaction">
+                            خرج سکه
+                        </p>
+                        <table>
+                            <tr>
+                                <th>کد فرم</th>
+                                <th>عنوان فرم</th>
+                                <th>سکه خرج شده</th>
+                                <th>زمان</th>
+                            </tr>
+                            {% for Trans in User.GetSpendTransaction %}
+                                <tr>
+                                    <td>{{ Trans.Form.ID_FORM }}</td>
+                                    <td>{{ Trans.Form.Title }}</td>
+                                    <td>{{ Trans.Coins }}</td>
+                                    <td>{{ Trans.GetTimePast }}</td>
+                                </tr>
+                            {% empty %}
+                                <tr class="Tr_Empty">
+                                    <td colspan="4">موردی یافت نشد</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                <div class="ContainerImageCoinsForDesign">
+                    <img src="/Assets/Img/User/Panel/ImageCoins_2.jpg" alt="Coins">
+                </div>
+            </div>
+            <div class="ContainerMainContent d-none" ContainerPage id="Container_Info">
+                <div class="ContainerTitle">
+                    <p>اطلاعات شخصی</p>
+                </div>
+                <div class="ContianerFormInfo">
+                    <img src="/Assets/Img/User/Panel/ImageCompleteInfo.jpg" alt="Complete Info and Get Gift"
+                         class="ImageDesignCompleteInfo">
+                    <div class="FormInfo">
+                        {% if User.GetedGiftCompleteInfo == False %}
+                            <p class="Text_CompleteInfo">
+                                با تکمیل کردن اطلاعات شخصی خودتان
+                                <strong>
+                                    200 سکه
+                                </strong> از ما هدیه بگیرید
+                                <i class="fa fa-coins"></i>
+                            </p>
+                        {% endif %}
+                        <form action="/User/Panel/SubmitInfo" method="post" id="FormSubmitInfo">
+                            <div class="ContainerIntroductionCode">
+                                <p>شما با معرفی دیجیت فرم به اشنایان خود کمک بزرگی به ما میکنید و همینطور میتوانید با
+                                    اشتراک
+                                    گذاری کد معرفی خود به دوستانتان و ثبت نام انها 200 سکه از دیجیت فرم هدیه بگرید</p>
+                                <div>
+                                    <p class="TitleInfoIntroductionCode">کد معرفی :</p>
+                                    <p class="IntroductionCode" data-toggle="tooltip" data-placement="top"
+                                       ClickFunc="SetTextInClipBoard({{ User.IntroductionCode }})"
+                                       title="شما با معرفی دیجیت فرم به اشنایان خود کمک بزرگی به ما میکنید و همینطور میتوانید با اشتراک گذاری کد معرفی خود به دوستانتان و  ثبت نام انها 200 سکه  از دیجیت فرم هدیه بگرید">{{ User.IntroductionCode }}</p>
+                                </div>
+                            </div>
+                            {% csrf_token %}
+                            <div class="ItemForm">
+                                <p class="LabelInput">نام و نام خانوادگی :</p>
+                                <div class="ItemFormInput">
+                                    <input type="text" InputForm name="NameAndFamily"
+                                           value="{{ User.NameAndFamily|NoneVal:'' }}"
+                                           CheckInputVal SetIn="Icon" placeholder="نام و نام خانوادگی خود را وارد کنید"
+                                           Bigger="3" Less="50">
+                                    <i class="fa fa-times-circle"></i>
+                                </div>
+                            </div>
+                            <div class="ItemForm">
+                                <p class="LabelInput">شماره همراه :</p>
+                                <div class="ItemFormInput">
+                                    <input type="text" InputForm name="PhoneNumber"
+                                           value="{{ User.PhoneNumber|NoneVal:'' }}"
+                                           CheckInputVal SetIn="Icon" TypeVal="Number"
+                                           placeholder="شماره تلفن همراه خود را وارد کنید" Bigger="10" Less="12">
+                                    <i class="fa fa-times-circle"></i>
+                                </div>
+                            </div>
+                            <div class="ItemForm">
+                                <p class="LabelInput">ایمیل :</p>
+                                <div class="ItemFormInput">
+                                    <input type="text" disabled InputForm name="Email"
+                                           value="{{ User.Email|NoneVal:'' }}"
+                                           CheckInputVal
+                                           SetIn="Icon" TypeVal="Email" placeholder="ایمیل خود را وارد کنید" Bigger="3"
+                                           Less="100">
+                                    <i class="fa fa-times-circle"></i>
+                                </div>
+                            </div>
+                            <div class="ItemForm">
+                                <p class="LabelInput">رمز :</p>
+                                <div class="ItemFormInput">
+                                    <input type="password" name="Password" value="{{ User.Password|NoneVal:'' }}"
+                                           CheckInputVal
+                                           InputForm SetIn="Icon" TypeVal="Password"
+                                           placeholder="رمز ورود خود را وارد کنید"
+                                           Bigger="7" Less="100">
+                                    <i class="fa fa-times-circle"></i>
+                                </div>
+                                <p class="NoteInput">
+                                    رمز شما باید بین 8 تا 100 کاراکتر باشد
+                                </p>
+                            </div>
+                            <div class="ContainerBtnSubmitInfo">
+                                <button type="button" id="BtnSubmitInfo" class="BtnStyle_1 Disabled">
+                                    ثبت
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="ContainerContentDoesNotExists" class="d-none">
+                <img src="/Assets/Img/User/Panel/File_Sad_2.jpg" alt="No Form">
+                <p>چیزی یافت نشد</p>
+            </div>
+        </div>
+    </div>
+    {% include 'Base/Footer/index.html' %}
+{% endblock %}
+
+{% block Js %}
+    <script>
+        let List_Forms = JSON.parse('{{ User.GetForms_JSON|escapejs }}')
+    </script>
+    <script src="{% static 'Js/User/Panel/index.js' %}"></script>
+{% endblock %}

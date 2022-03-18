@@ -1,0 +1,78 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load static %}
+{% block Title %}
+    اموزش فرم ساز - دیجیت فرم
+{% endblock %}
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'Css/Base/Header/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/Base/Footer/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/Learn/index.css' %}">
+{% endblock %}
+
+
+
+{% block Content %}
+    {% include 'Base/Header/Header.html' with Fixed='true' Place='Other' ListItems='Home,CreateForm,FAQ,AboutUs,ContactUs,BtnChangeTheme,User,Logo' ListItemsMobile='CreateForm,FAQ,AboutUs,ContactUs,Home,BtnChangeTheme' %}
+    <img src="/Assets/Img/Design/ImageDesignBackground_2.jpg" alt="Image Background Design" id="ImageDesignBackground">
+    <div class="Container col-12 col-md-9 col-xl-8">
+        <div class="ContainerTitle">
+            <p>اموزش دیجیت فرم</p>
+        </div>
+        <div class="ContentLearn">
+            <div class="TitleStep">
+                <p>قدم اول</p>
+            </div>
+            <div class="TextStep" AnimationScroll="Animation_TextStep">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci assumenda ex
+                    exercitationem illum obcaecati, pariatur perferendis temporibus totam voluptatem. Ab accusamus
+                    adipisci alias aliquam assumenda autem cumque deleniti ducimus eligendi enim est eum eveniet
+                    explicabo facilis hic in inventore iure laboriosam minima molestiae nostrum pariatur quaerat quam
+                    quas quasi quia repellat reprehenderit, similique tempora totam. Accusamus aspernatur assumenda
+                    consequuntur culpa debitis ducimus eos esse est exercitationem facilis fuga itaque iure molestiae
+                    neque nulla pariatur porro, quae quis, quod, reiciendis rem reprehenderit sint sit? Commodi culpa
+                    delectus distinctio doloremque, harum neque possimus quos repudiandae similique voluptatum? At ea
+                    qui velit!
+                </p>
+            </div>
+            <div class="TitleStep">
+                <p>قدم دوم</p>
+            </div>
+            <div class="TextStep" AnimationScroll="Animation_TextStep">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci assumenda ex
+                    exercitationem illum obcaecati, pariatur perferendis temporibus totam voluptatem. Ab accusamus
+                    adipisci alias aliquam assumenda autem cumque deleniti ducimus eligendi enim est eum eveniet
+                    explicabo facilis hic in inventore iure laboriosam minima molestiae nostrum pariatur quaerat quam
+                    quas quasi quia repellat reprehenderit, similique tempora totam. Accusamus aspernatur assumenda
+                    consequuntur culpa debitis ducimus eos esse est exercitationem facilis fuga itaque iure molestiae
+                    neque nulla pariatur porro, quae quis, quod, reiciendis rem reprehenderit sint sit? Commodi culpa
+                    delectus distinctio doloremque, harum neque possimus quos repudiandae similique voluptatum? At ea
+                    qui velit!
+                </p>
+            </div>
+            <div class="TitleStep">
+                <p>قدم سوم</p>
+            </div>
+            <div class="TextStep" AnimationScroll="Animation_TextStep">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci assumenda ex
+                    exercitationem illum obcaecati, pariatur perferendis temporibus totam voluptatem. Ab accusamus
+                    adipisci alias aliquam assumenda autem cumque deleniti ducimus eligendi enim est eum eveniet
+                    explicabo facilis hic in inventore iure laboriosam minima molestiae nostrum pariatur quaerat quam
+                    quas quasi quia repellat reprehenderit, similique tempora totam. Accusamus aspernatur assumenda
+                    consequuntur culpa debitis ducimus eos esse est exercitationem facilis fuga itaque iure molestiae
+                    neque nulla pariatur porro, quae quis, quod, reiciendis rem reprehenderit sint sit? Commodi culpa
+                    delectus distinctio doloremque, harum neque possimus quos repudiandae similique voluptatum? At ea
+                    qui velit!
+                </p>
+            </div>
+        </div>
+    </div>
+    {% include 'Base/Footer/index.html' %}
+{% endblock %}
+
+{% block Js %}
+    <script src="{% static 'Js/Learn/index.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,156 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load static %}
+{% block Title %}
+    خانه - دیجیت فرم
+{% endblock %}
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'Css/Base/Header/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/Base/Footer/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/Home/index.css' %}">
+{% endblock %}
+
+
+
+
+{% block Content %}
+    {% include 'Base/Header/Header.html' with Fixed='true' ListItems='Home,CreateForm,Learn,FAQ,AboutUs,ContactUs,BtnChangeTheme,User,Logo' ListItemsMobile='CreateForm,Learn,FAQ,AboutUs,ContactUs,Home,BtnChangeTheme' %}
+    <main>
+        <div class="ContainerContentTop col-12 col-md-11  mx-auto" AnimationScroll="Animation_ShowContentTop_Before"
+             AnimationScroll_2="Animation_ShowContentTop_After">
+            <div>
+                <h1 AnimationScroll="Animation_ShowContentTop_TitleDigitForm">دیجیت فرم</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque exercitationem fugiat provident
+                    quasi. Ab alias, consequuntur corporis culpa cupiditate eos expedita harum in iste labore magnam,
+                    minus molestias nobis optio placeat quaerat quia quidem reprehenderit sint sit? Aliquam,
+                    consequuntur, deleniti doloribus et eum exercitationem inventore ipsa iste, magnam reiciendis
+                    repellendus?
+                </p>
+                <div class="text-left mt-5 mb-3">
+                    <a href="/User/Panel?CreateForm" class="BtnStyle_11">
+                        ساخت فرم
+                    </a>
+                </div>
+            </div>
+            <img class="ImageDesignContentTopHome" src="/Assets/Img/Design/ImageContentTopHome.jpg" alt="Image Design"
+                 AnimationScroll="Animation_ImageDesignContentTopHome">
+        </div>
+        <div class="ContainerBenefits" AnimationScroll="Animation_ContainerBenefits">
+            <img src="/Assets/Img/Design/ImageDesignBackground_4.jpg" alt="Image Design Blobs">
+            <div class="ContianerTitle">
+                <p>چرا دیجیت فرم</p>
+            </div>
+            <div class="Benefits">
+                <div class="Benefit" Security>
+                    <h3 AnimationScroll="Animation_TitleBenefit">امنیت بالا</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, temporibus.
+                    </p>
+                    <div>
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                </div>
+                <div class="Benefit" LowCost>
+                    <h3 AnimationScroll="Animation_TitleBenefit">هزینه پایین</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, temporibus.
+                    </p>
+                    <div>
+                        <i class="fas fa-coins"></i>
+                    </div>
+                </div>
+                <div class="Benefit" FormProfesional>
+                    <h3 AnimationScroll="Animation_TitleBenefit">حرفه ای</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, temporibus.
+                    </p>
+                    <div>
+                        <i class="fas fa-magic"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="overflow-hidden">
+            <div class="ContainerAboutUsAndComment">
+                <div class="ContianerAboutUs" id="AboutUs" AnimationScroll="Animation_ContianerAboutUs">
+                    <div class="AboutUs">
+                        <div class="ContianerTitle">
+                            <p>درباره ما</p>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate distinctio eaque
+                            exercitationem fuga fugiat magnam magni natus, nihil quidem repellendus rerum sequi
+                            similique
+                            sunt
+                            temporibus unde voluptates voluptatibus. Aliquam aliquid cumque debitis enim et, hic,
+                            inventore
+                            labore laboriosam obcaecati pariatur sed velit. Enim maxime numquam, rerum similique velit
+                            voluptates.
+                        </p>
+                    </div>
+                </div>
+                <!-- <div class="ContianerComments" id="Comments" AnimationScroll="Animation_ContianerComments">
+                     <div class="Comments">
+                         <div class="ContianerTitle">
+                             <p>نظر برخی از عزیزان</p>
+                         </div>
+                         <p>
+                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate distinctio eaque
+                             exercitationem fuga fugiat magnam magni natus, nihil quidem repellendus rerum sequi
+                             similique
+                             sunt
+                             temporibus unde voluptates voluptatibus. Aliquam aliquid cumque debitis enim et, hic,
+                             inventore
+                             labore laboriosam obcaecati pariatur sed velit. Enim maxime numquam, rerum similique velit
+                             voluptates.
+                         </p>
+                     </div>
+                 </div> -->
+                <div class="ContianerGoalUs" id="GoalUs" AnimationScroll="Animation_ContianerGoalUs">
+                    <div class="GoalUs">
+                        <div class="ContianerTitle">
+                            <p>هدف ما</p>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate distinctio eaque
+                            exercitationem fuga fugiat magnam magni natus, nihil quidem repellendus rerum sequi
+                            similique
+                            sunt
+                            temporibus unde voluptates voluptatibus. Aliquam aliquid cumque debitis enim et, hic,
+                            inventore
+                            labore laboriosam obcaecati pariatur sed velit. Enim maxime numquam, rerum similique velit
+                            voluptates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ContianerFAQ" id="FAQ" AnimationScroll="Animation_ContianerFAQ">
+            <div class="ContianerTitle">
+                <p>سوالات متداول</p>
+            </div>
+            <div class="FAQS">
+                <div class="NoteFAQ">
+                    <p class="m-0">شما میتوانید در صورت نیاز پرسش خود را از طریق صفحه ارتباط با ما انجام دهید</p>
+                    <i class="fa fa-question Large"></i>
+                </div>
+                {% for Faq in Faqs %}
+                    <div class="FAQ" AnimationScroll="Animation_FAQ" {% cycle 'Right' 'Left' %}>
+                        <div>
+                            <div>{{ Faq.Question }}</div>
+                            <p>{{ Faq.Answer }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <img class="ImageDesignBottomBase" src="/Assets/Img/Design/ImageFooterBase.jpg"
+             alt="Image Design Bottom" AnimationScroll="Animation_ImageDesignBottomBase">
+    </main>
+    {% include 'Base/Footer/index.html' %}
+{% endblock %}
+
+{% block Js %}
+    <script src="/Assets/Js/Home/index.js"></script>
+{% endblock %}

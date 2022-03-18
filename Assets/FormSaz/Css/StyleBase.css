@@ -1,0 +1,433 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+::placeholder {
+    font-size: 80%;
+    color: #888888;
+    text-align: right;
+}
+
+::-webkit-input-placeholder {
+    text-align: right;
+    font-size: 80%;
+    color: #888888;
+}
+
+:-moz-placeholder {
+    text-align: right;
+    font-size: 80%;
+    color: #888888;
+}
+
+h6 {
+    font-size: 19px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    outline: none;
+}
+
+video {
+    width: 300px;
+    height: 300px;
+}
+
+
+.CONTAINER_INPUT_BASE {
+    padding: 0 !important;
+    display: inline-block;
+}
+
+.CONTAINER_INPUT_FILE {
+    border-radius: 7px;
+}
+
+.CONTAINER_BOX_BASE {
+    display: inline-block;
+}
+
+
+.BOX_BASE {
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(198, 198, 198, 0.2);
+    border: 1px solid #f2f2f2;
+    border-radius: 15px;
+    padding: 20px 0;
+    padding-top: 5px;
+    margin: 10px;
+    display: inline-block;
+    width: 350px;
+    height: 210px;
+    overflow: auto;
+}
+
+.PAGE_FORM {
+    background: #f6fdff;
+    width: 100%;
+    height: calc(100% - 40px);
+    overflow: auto;
+    padding: 0 !important;
+    border-radius: inherit;
+    text-align: right;
+}
+
+.PAGE_FORM > * {
+    vertical-align: top;
+    /*padding: 3px;*/
+}
+
+
+.PAGE_FORM *::-webkit-scrollbar {
+    width: 6px;
+    height: 3px;
+}
+
+.PAGE_FORM *::-webkit-scrollbar-track {
+    background: #d4d4d4;
+    margin-right: 2px;
+}
+
+.PAGE_FORM *::-webkit-scrollbar-thumb {
+    background: #333333;
+}
+
+.PAGE_FORM *::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+.CONTAINER_INPUT_CHECKBOX {
+    background: #ffffff;
+    border-radius: 15px;
+    border: 1px solid rgba(71, 71, 71, 0.2);
+    box-shadow: 0 3px 4px rgba(102, 102, 102, 0.07);
+    padding: 4px 10px !important;
+    margin: 5px 2px;
+    display: inline-block;
+    width: auto;
+}
+
+.CONTAINER_INPUT_CHECKBOX input {
+    position: relative;
+    width: auto;
+    height: auto;
+    transform: scale(1.3);
+}
+
+.CONTAINER_INPUT_CHECKBOX p {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 90%;
+    color: #444444;
+    vertical-align: middle;
+}
+
+.CONTAINER_INPUT_RADIO {
+    background: #ffffff;
+    border-radius: 40px;
+    padding: 6px 4px !important;
+    display: inline-block;
+    padding: 4px 5px;
+    box-shadow: 0 3px 4px rgba(102, 102, 102, 0.15);
+    width: 32%;
+}
+
+.CONTAINER_INPUT_RADIO input {
+    vertical-align: middle;
+    position: relative;
+    width: auto !important;
+}
+
+.CONTAINER_INPUT_RADIO input::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 6px;
+    background: #ffffff;
+    border: 1px solid rgba(30, 30, 30, 0.5);
+}
+
+
+.CONTAINER_INPUT_RADIO input:checked::before {
+    border: 1px solid rgba(54, 255, 128, 0.2);
+    background: rgb(17, 216, 108);
+}
+
+
+.CONTAINER_INPUT_RADIO p {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 85%;
+    color: #444444;
+}
+
+/*.CONTAINER_INPUT_BASE input{*/
+/*    color: inherit;*/
+/*    background: inherit;*/
+/*    font-size: inherit;*/
+/*    text-align: inherit;*/
+/*    margin: inherit;*/
+/*    padding: inherit;*/
+/*}*/
+
+.INPUT_BASE {
+    width: 300px;
+    height: 40px;
+    background: #f5f5f5;
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid #dddddd;
+    outline: none;
+    transition: all .15s, border 0s;
+    margin: 10px;
+}
+
+.INPUT_BASE:focus {
+    background: #ffffff !important;
+    border: none;
+    border: 1px solid rgba(39, 206, 224, 0.7);
+    box-shadow: 0 3px 5px rgba(189, 189, 189, 0.3);
+}
+
+.TAG_BASE {
+    border-radius: 5px;
+    padding: 4px;
+    margin: 10px;
+}
+
+.TAG_P_BASE {
+    padding: 5px !important;
+}
+
+.INPUT_TEXTAREA {
+    width: 400px;
+    height: 100px;
+    resize: none;
+}
+
+
+/* Animations File Css */
+
+.PAGE_FORM {
+    animation: Animation_PAGE_FORM .25s forwards;
+    transform: scale(.8);
+}
+
+
+@keyframes Animation_PAGE_FORM {
+    to {
+        transform: scale(1);
+    }
+}
+
+
+/*.ItemSettings{*/
+/*    animation: Animation_ItemSettings .3s forwards;*/
+/*    opacity: .2;*/
+/*}*/
+
+/*@keyframes Animation_ItemSettings {*/
+/*    to{*/
+/*        opacity: 1;*/
+/*    }*/
+/*}*/
+
+/* ---------------- Style Form Quiz --------------- */
+
+.QUESTION_BOX {
+    background: #ffffff !important;
+    display: block;
+    width: 98% !important;
+    margin: 20px auto !important;
+    padding: 0 !important;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 1px 5px rgba(240, 240, 240, 0.3);
+    border-radius: 5px;
+
+}
+
+.QUESTION_BOX > div {
+    box-shadow: none;
+    margin: 0;
+    width: 100% !important;
+    display: block;
+    border-radius: inherit;
+}
+
+.BTN_SELECT_QUESTION {
+    background: #eeeeee;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border: 1px dashed #888888;
+    outline: none;
+    font-size: 75%;
+    padding: 5px 7px;
+    border-radius: 10px;
+    transition: all .15s;
+}
+
+.BTN_SELECT_QUESTION i {
+    transition: inherit;
+}
+
+.BTN_SELECT_QUESTION:hover {
+    background: #d8d8d8;
+}
+
+.BTN_SELECT_QUESTION:active {
+    transform: scale(.85);
+}
+
+.BTN_SELECT_QUESTION:active i {
+    transform: rotate(150deg);
+}
+
+/*.CONTAINER_INPUT_ANSWER{*/
+/*    width: 98%!important;*/
+/*}*/
+
+.CONTAINER_INPUT_ANSWER textarea {
+    box-shadow: none;
+}
+
+.CONTAINER_INPUT_ANSWER input {
+    box-shadow: none;
+
+}
+
+.COUNTER_QUESTION {
+    text-align: right;
+    font-size: 70%;
+    display: inline-block;
+    margin: 0;
+    padding: 2px 3px;
+    border: 1px dashed rgba(85, 85, 85, 0.35);
+    position: fixed;
+    bottom: 3px;
+    right: 3px;
+    color: #333333;
+    border-radius: 5px;
+    background: #ffffff;
+}
+
+
+.SCORE_QUESTION {
+    text-align: left;
+    display: inline-block;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    left: 5px;
+    z-index: 2;
+    font-size: 85%;
+}
+
+
+.BTN_ADD_INPUT_ANSWER {
+    border: none;
+    outline: none;
+    padding: 4px;
+    font-size: 70%;
+    margin: 5px;
+    padding: 6px 5px;
+    border-radius: 5px;
+    vertical-align: middle;
+    background: var(--ColorBase);
+    box-shadow: 0 2px 3px #dddddd;
+    color: #ffffff;
+    transition: all .2s;
+    position: absolute;
+    bottom: 1px;
+    right: 0;
+    z-index: 2;
+}
+
+.BTN_ADD_INPUT_ANSWER:active {
+    box-shadow: none;
+    transform: scale(.95);
+}
+
+.CONTAINER_INPUT_ANSWER_QUESTION_TEST_SETTINGS > div {
+    display: block !important;
+}
+
+.CONTAINER_INPUT_ANSWER_QUESTION_TEST_SETTINGS > div .CONTAINER_INPUT_RADIO {
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.INPUT_ANSWER_SETED {
+    position: relative !important;
+}
+
+.INPUT_ANSWER_SETED:before {
+    content: "✔";
+    font-size: 85%;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    bottom: -2px;
+    right: -2px;
+    padding-top: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--ColorBase);
+    color: #ffffff;
+}
+
+.NOTE_INPUT_MEDIA {
+    display: block;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    direction: ltr;
+    padding-bottom: 5px;
+}
+
+.NOTE_INPUT_MEDIA i {
+    cursor: help !important;
+    font-size: 100%;
+    color: #daa311;
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+.NOTE_INPUT_MEDIA p {
+    margin: 0;
+    margin-right: 5px;
+    font-size: 70%;
+    opacity: 0;
+    border-radius: 4px;
+    background: #fffdb9;
+    color: #b47500;
+    text-align: center;
+    overflow: hidden;
+    display: inline-block;
+    transition: all .15s;
+}
+
+.NOTE_INPUT_MEDIA i:hover ~ p {
+    padding: 2px 4px;
+    opacity: 1;
+    border: 1px dashed rgba(152, 148, 83, 0.5);
+}
+
+.INPUT_VALID {
+    border: 1px solid rgba(75, 168, 222, 0.9);
+}
+
+.TAG_SHOW_MEDIA{
+    margin-right: 15px;
+}

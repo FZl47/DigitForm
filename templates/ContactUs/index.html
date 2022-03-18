@@ -1,0 +1,79 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load static %}
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'Css/Base/Header/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/Base/Footer/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/ContactUs/index.css' %}">
+{% endblock %}
+
+
+{% block Title %}
+    تماس با ما - دیجیت فرم
+{% endblock %}
+
+
+{% block Content %}
+    {% include 'Base/Header/Header.html' with Fixed='true' Place='Other'  ListItems='Home,CreateForm,Learn,FAQ,AboutUs,ContactUs,BtnChangeTheme,User,Logo' ListItemsMobile='CreateForm,Learn,FAQ,AboutUs,ContactUs,Home,BtnChangeTheme' %}
+    <img src="/Assets/Img/Design/ImageDesignBackground_2.jpg" alt="Image Background Design" id="ImageDesignBackground">
+    <div class="Container col-11 col-md-10 col-lg-9">
+        <div class="ContainerContactUs">
+            <img src="/Assets/Img/Design/ImageDesignContactUs.jpg" alt="Image Contact Us" id="ImageDesignContactUs">
+            <div class="ContentContactUs">
+                <h1 class="FontFamily_KalameBalack ColorBase mb-3">با ما در ارتباط باشید</h1>
+                <p class="TextDesciprtionContactUs">
+                    {{ INFO_DIGIT.ContactUs_Description }}
+                </p>
+                <form action="/Comment/Submit" method="post" id="FormComment">
+                    {% csrf_token %}
+                    <div class="ItemForm">
+                        <p class="LabelInput">
+                            نام و نام خانوادگی :
+                        </p>
+                        <div class="ItemFormInput">
+                            <input type="text" name="NameAndFamily" placeholder="نام و نام خانوادگی خود را وارد نمایید"
+                                   TypeVal="Text" SetIn="Container" Bigger="3" Less="100" InputForm>
+                        </div>
+                    </div>
+                    <div class="ItemForm">
+                        <p class="LabelInput">
+                            ایمیل :
+                        </p>
+                        <div class="ItemFormInput">
+                            <input type="email" name="Email" placeholder="ایمیل خود را وارد نمایید" TypeVal="Email"
+                                   SetIn="Container" Bigger="3" Less="100" InputForm>
+                        </div>
+                    </div>
+                    <div class="ItemForm">
+                        <p class="LabelInput">
+                            پیام :
+                        </p>
+                        <div class="ItemFormInput">
+                            <textarea type="text" name="Message" placeholder="پیام خود را وارد نمایید" TypeVal="Text"
+                                      SetIn="Container" Bigger="3" Less="2000" InputForm></textarea>
+                        </div>
+                    </div>
+                    <div class="text-left col-10 mx-auto mt-3">
+                        <button class="BtnStyle_1 Disabled" type="button" id="BtnSubmitForm">ثبت</button>
+                    </div>
+                </form>
+                <div class="ContianerSocialMedia">
+                    <a href="https://t.me/{{ INFO_DIGIT.ID_Telegram }}" target="_blank" Telegram>
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://www.instagram.com/{{ INFO_DIGIT.ID_Instagram }}/" target="_blank" Instagram>
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:{{ INFO_DIGIT.Email }}" target="_blank" Email>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'Base/Footer/index.html' %}
+{% endblock %}
+
+{% block Js %}
+    <script src="{% static 'Js/ContactUs/index.js' %}"></script>
+{% endblock %}

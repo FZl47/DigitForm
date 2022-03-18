@@ -1,0 +1,158 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load FilterTags %}
+{% load static %}
+{% block Title %}
+    {{ Form.Title }}
+{% endblock %}
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'Css/Base/Header/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/Base/Footer/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/ViewForm/PreForm.css' %}">
+{% endblock %}
+
+
+{% block Content %}
+    {% include 'Base/Header/Header.html' with Fixed='true' Place='Other' ListItems='Home,CreateForm,Learn,FAQ,AboutUs,ContactUs,User,Logo' ListItemsMobile='CreateForm,Learn,FAQ,AboutUs,ContactUs,Home' %}
+    <div class="ImageDesignBackground"></div>
+    {% if RecordSubmited == False %}
+        <div id="ContainerPreForm" class="ContainerPreForm">
+            <div class="ContentPreForm col-11 col-md-7 col-lg-4">
+                <h3>{{ Form.Title }}</h3>
+                {% if Form.FormEnded == False %}
+                    <form action="/View/{{ Form.ID_FORM }}" method="post" id="FormView">
+                        {% csrf_token %}
+                    </form>
+                    <p>{{ Form.Description|NoneVal:'توضیحی وجود ندارد' }}</p>
+                    <div class="ContainerTimePreForm">
+                        <p class="Text_Des_TimePreForm">زمان تا فعال شدن فرم :</p>
+                        <div class="ContainerTimeClock">
+                            <div>
+                                <p>ثانیه</p>
+                                <div id="Timer_Clock_Second" class="Timer_Clock_Section">0</div>
+                            </div>
+                            <div>
+                                <p>دقیقه</p>
+                                <div id="Timer_Clock_Minute" class="Timer_Clock_Section">0</div>
+                            </div>
+                            <div>
+                                <p>ساعت</p>
+                                <div id="Timer_Clock_Hour" class="Timer_Clock_Section">0</div>
+                            </div>
+                            <div>
+                                <p>روز</p>
+                                <div id="Timer_Clock_Day" class="Timer_Clock_Section">0</div>
+                            </div>
+                        </div>
+                        <div class="ContainerTimeDetail">
+                            <p>
+                                فرم در تاریخ
+                                <b>{{ Form.GetConfigForm.DateStart }}</b>
+                                و زمان
+                                <b>{{ Form.GetConfigForm.TimeStart }}</b>
+                                شروع میشود و در تاریخ
+                                <b>{{ Form.GetConfigForm.DateEnd }}</b>
+                                و زمان
+                                <b>{{ Form.GetConfigForm.TimeEnd }}</b>
+                                به پایان میرسد .
+                            </p>
+                        </div>
+                    </div>
+                    <div class="ContainerNoteForm">
+                        <p class="TitleContainerNoteForm">نکات :</p>
+                        <ul>
+                            <li>توجه کنید تا زمانی که دکمه ثبت در انتهای فرم را نزنید فرم شما نهایی نمیشود .</li>
+                        </ul>
+                    </div>
+                    <div class="ContainerBtnViewForm">
+                        <button class="BtnStyle_6 Disabled" id="BtnViewForm">ورود</button>
+                    </div>
+                {% else %}
+                    <div class="ContainerFormEnded">
+                        <h5>زمان فرم به پایان رسیده است</h5>
+                        <i class="fal fa-clock"></i>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% else %}
+        <div class="ContainerRecordAlreadySubmited">
+            <h2>شما این فرم را پر کرده اید</h2>
+            <div class="ContentTrackingCode col-11 col-md-4 col-lg-3 m-auto">
+                <h4 class="text-right FontFamily_KalameBalack text-dark">کد پیگیری شما :</h4>
+                <div>
+                    <p id="TrackingCode" class="TrackingCode">{{ Record.TrackingCode }}</p>
+                </div>
+                <div class="my-4 mx-auto">
+                    <a href="/FormSaz/Trc/Check/{{ Form.ID_FORM }}/{{ Record.TrackingCode }}" class="BtnShowResult">مشاهده
+                        نتیجه</a>
+                </div>
+                <p class="Text_Info_TrackingCode">با استفاده از کد پیگیری میتوانید نتیجه فرمی که پر کرده اید را مشاهده
+                    کنید</p>
+            </div>
+        </div>
+    {% endif %}
+    {% include 'Base/Footer/index.html' %}
+{% endblock %}
+
+
+{% block Js %}
+    {% if Form.FormEnded == False and RecordSubmited == False %}
+        <script>
+            let _ID_FORM = '{{ Form.ID_FORM }}'
+            let ToTimeStartForm = '{{ Form.GetTimeStartForm }}'
+            let BtnViewForm = document.getElementById('BtnViewForm')
+            let Timer_Clock_Second = document.getElementById('Timer_Clock_Second')
+            let Timer_Clock_Minute = document.getElementById('Timer_Clock_Minute')
+            let Timer_Clock_Hour = document.getElementById('Timer_Clock_Hour')
+            let Timer_Clock_Day = document.getElementById('Timer_Clock_Day')
+            let TimerCounterDownObjectStartForm = setInterval(AccssessToForm, 1000)
+            function AccssessToForm() {
+                let Time = TimerCountDownObject(ToTimeStartForm)
+                let Sec = Time.Seconds
+                let Min = Time.Minutes
+                let Hr = Time.Hours
+                let Day = Time.Days
+                if (Sec < 0 && Min < 0 && Min < 0 && Day < 0) {
+                    clearInterval(TimerCounterDownObjectStartForm)
+                    BtnViewForm.classList.remove('Disabled')
+                    BtnViewForm.onclick = function () {
+                        $.ajax({
+                            url: `/FormSaz/SubmitViewRecord/${_ID_FORM}`,
+                            type: 'POST',
+                            dataType: 'json',
+                            headers: {'X-CSRFToken': window.CSRF_TOKEN},
+                            success: function (Response) {
+                                let Status = Response.Status
+                                if (Status == '200') {
+                                    document.getElementById('FormView').submit()
+                                } else {
+                                    ShowNotificationMessage(Response.Status_Text, 'Error')
+                                }
+                            }
+                        })
+                    }
+                    Sec = 0
+                    Min = 0
+                    Hr = 0
+                    Day = 0
+                }
+                Timer_Clock_Second.innerText = Sec
+                Timer_Clock_Minute.innerText = Min
+                Timer_Clock_Hour.innerText = Hr
+                Timer_Clock_Day.innerText = Day
+            }
+            AccssessToForm()
+        </script>
+    {% endif %}
+    <script>
+        let TextTraciknCode = document.getElementById('TrackingCode')
+        if (TextTraciknCode) {
+            TextTraciknCode.addEventListener('click', function () {
+                let Code = this.innerText
+                navigator.clipboard.writeText(Code);
+                ShowNotificationMessage('متن کپی شد', 'Success', 3000)
+            })
+        }
+    </script>
+{% endblock %}

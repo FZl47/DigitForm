@@ -1,0 +1,184 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load static %}
+{% block Title %}
+    {{ Form.Title }}
+{% endblock %}
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'Css/Base/Header/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/Base/Footer/index.css' %}">
+    <link rel="stylesheet" href="{% static 'FormSaz/Css/View/index.css' %}">
+{% endblock %}
+
+
+
+{% block Content %}
+    {% include 'Base/Header/Header.html' with Fixed='true' Place='' ListItems='Home,Learn,FAQ,AboutUs,ContactUs,BtnChangeTheme,User,Logo' ListItemsMobile='CreateForm,Learn,FAQ,AboutUs,ContactUs,Home,BtnChangeTheme' %}
+    <main>
+        <div class="ContainerContentForm col-12 col-md-11 p-0">
+            <div class="ContainerHeaderContentForm col-12 m-0">
+                <div>
+                    <a href="/FormSaz/Create/{{ Form.ID_FORM }}">
+                        <button id="BtnCreateForm" class="BtnHeader BtnHeader_CreateForm">
+                            ساخت اجزای فرم
+                            <i class="fa fa-file-plus"></i>
+                        </button>
+                    </a>
+                    <a href="/View/{{ Form.ID_FORM }}">
+                        <button id="BtnShowForm" class="BtnHeader BtnHeader_ShowForm">
+                            نمایش فرم
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </a>
+                </div>
+                <div>
+                    <button id="BtnDeleteForm" onclick="DeleteForm({{ Form.id }})">
+                        <p>حذف فرم</p>
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="text-left mt-1 ml-2">
+                <div class="ContainerLinkForm">
+                    <h6 class="Small"> : ادرس فرم</h6>
+                    <button onclick="SetTextInClipBoard('http://{{ request.get_host }}/View/{{ Form.ID_FORM }}')">
+                        <i class="fa fa-clone"></i>
+                        <p>کپی</p>
+                    </button>
+                    <div>
+                        <a style="color: inherit"
+                           href="http://{{ request.get_host }}/View/{{ Form.ID_FORM }}">http://{{ request.get_host }}/View/{{ Form.ID_FORM }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ContainerInfoForm d-md-flex justify-content-around py-3" id="ContainerInfoForm">
+                <div class="InfoForm col-12 col-md-4">
+                    <h5 class="FontFamily_KalameBalack">اطلاعات فرم</h5>
+                    <div>
+                        <div class="TitleForm text-center">
+                            <p class="w-100 d-block">{{ Form.Title }}</p>
+                        </div>
+                        <div TimeCreateForm>
+                            <p>زمان ساخت فرم :</p>
+                            <p>{{ Form.GetTimeSpan }}</p><i class="far fa-clock AnimationRotateClock"></i>
+                        </div>
+                        <div ExpiryDateForm>
+                            <p>مدت اعتبار فرم :</p>
+                            <p>{{ Form.GetExpiryDateSpan }}</p><i class="far fa-file-certificate"></i>
+                        </div>
+                        <div CountSubmitForm>
+                            <p>تعداد ثبت فرم :</p>
+                            <p>{{ Form.GetSubmitForm }}</p><i class="far fa-file-check"></i>
+                        </div>
+                        <div CountSeenForm>
+                            <p>تعداد بازدید فرم :</p>
+                            <p>{{ Form.GetSeenForm }}</p><i class="far fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="ContainerSettingsForm col-12 col-md-7">
+                    <form id="FormInfo">
+                        <!-- Content Settings and Info Form -->
+                    </form>
+                    <div class="ContainerBtnSubmitInfoForm text-left">
+                        <button class="BtnStyle_1 Disabled" id="BtnSubmitInfoForm">ثبت</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ContainerRecordsForm col-12 col-md-12 col-xl-9" id="ContainerRecordsForm">
+                <div class="ContainerTitle">
+                    <p>جواب های ثبت شده</p>
+                </div>
+                <div class="ContentRecordsForm">
+                    {% for Record in Form.GetRecords %}
+                        <div class="Record">
+                            <div>
+                                <p class="TitleSectionRecord">#</p>
+                                <p class="ValueSectionRecord">{{ forloop.revcounter }}</p>
+                            </div>
+                            <div class="Record_UserCode">
+                                <p class="TitleSectionRecord">ایدی کاربر</p>
+                                <p class="ValueSectionRecord">{{ Record.UserCode }}</p>
+                            </div>
+                            <div class="Record_IP">
+                                <p class="TitleSectionRecord">IP</p>
+                                <p class="ValueSectionRecord">{{ Record.IP }}</p>
+                            </div>
+                            <div class="Record_Time">
+                                <p class="TitleSectionRecord">زمان ثبت</p>
+                                <p class="ValueSectionRecord">{{ Record.GetTimePast }}</p>
+                            </div>
+                            <div class="Record_Device d-none d-xl-inline-block">
+                                <p class="TitleSectionRecord">نوع دستگاه</p>
+                                <p class="ValueSectionRecord">{{ Record.InfoDevice }}</p>
+                            </div>
+                            <div style="width: 70px;border-left: none;text-overflow: initial">
+                                {% if Record.IsChecked %}
+                                    <i class="fa fa-check-circle" data-toggle="tooltip" title="مشاهده شده است"></i>
+                                {% endif %}
+                            </div>
+                            <a href="/FormSaz/{{ Form.ID_FORM }}/Record/{{ Record.id }}" class="Record_More">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        </div>
+                    {% empty %}
+                        <div class="RecordsEmpty">
+                            <img src="/Assets/Img/Design/File_Sad.jpg" class="col-11 col-md-6 col-lg-5"
+                                 alt="File Sad 404">
+                            <h4>چیزی یافت نشد</h4>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="ContainerViewRecordsForm col-12 col-md-12 col-xl-9" id="ContainerViewRecordsForm">
+                <div class="ContainerTitle">
+                    <p>بازدید ها</p>
+                </div>
+                <div class="ContentRecordsForm">
+                    {% for Record in Form.GetViewRecords %}
+                        <div class="Record">
+                            <div>
+                                <p class="TitleSectionRecord">#</p>
+                                <p class="ValueSectionRecord">{{ forloop.revcounter }}</p>
+                            </div>
+                            <div class="Record_UserCode">
+                                <p class="TitleSectionRecord">ایدی کاربر</p>
+                                <p class="ValueSectionRecord">{{ Record.UserCode }}</p>
+                            </div>
+                            <div class="Record_IP">
+                                <p class="TitleSectionRecord">IP</p>
+                                <p class="ValueSectionRecord">{{ Record.IP }}</p>
+                            </div>
+                            <div class="Record_Time">
+                                <p class="TitleSectionRecord">زمان ثبت</p>
+                                <p class="ValueSectionRecord">{{ Record.GetTimePast }}</p>
+                            </div>
+                            <div class="Record_Device d-none d-xl-inline-block">
+                                <p class="TitleSectionRecord">نوع دستگاه</p>
+                                <p class="ValueSectionRecord">{{ Record.InfoDevice }}</p>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="RecordsEmpty">
+                            <img src="/Assets/Img/Design/File_Sad.jpg" class="col-11 col-md-6 col-lg-5"
+                                 alt="File Sad 404">
+                            <h4>چیزی یافت نشد</h4>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+    {% include 'Base/Footer/index.html' %}
+{% endblock %}
+
+
+{% block Js %}
+    <script src="/Assets/FormSaz/Js/ModelsBase.js"></script>
+    <script>
+        let StateEditedForm = '{{ Form.Form_Edited }}'
+        let _Form = JSON.parse('{{ Form_JSON|escapejs }}')
+        let _ID_FORM = '{{ Form.ID_FORM }}'
+    </script>
+    <script src="{% static 'FormSaz/Js/View/index.js' %}"></script>
+{% endblock %}

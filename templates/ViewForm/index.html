@@ -1,0 +1,215 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load FilterTags %}
+{% block Title %}
+    {{ Form.Title }}
+{% endblock %}
+
+{% block Link %}
+    <link rel="stylesheet" href="/Assets/FormSaz/Css/StyleBase.css">
+    <link rel="stylesheet" href="/Assets/Css/ViewForm/index.css">
+{% endblock %}
+
+{% block Css %}
+
+    {% if Form.GetConfigForm.ShowNumberQuestion == 'false' %}
+        <style>
+            .COUNTER_QUESTION {
+                display: none;
+            }
+        </style>
+    {% endif %}
+
+{% endblock %}
+
+{% block Content %}
+    {% if RecordSubmited == False %}
+        <div class="ImageDesignBackground"></div>
+        <div id="Form">
+            <header class="ContainerHeader">
+                <div class="Logo">
+                    <img src="/Assets/Img/Logo/Logo.jpg" alt="Logo">
+                    <p class="ColorBase">دیجیت فرم</p>
+                </div>
+                <div class="TitleForm">
+                    <p>
+                        {{ Form.Title|truncatechars:25 }}
+                    </p>
+                </div>
+                <div class="TimeForm">
+                    <span>فرم تا </span>
+                    <b><span TimerCounterDown title="تا پایان فرم" TodateTimer="{{ Form.GetTimeEndForm }}"></span></b>
+                    <span>فعال است</span>
+                </div>
+            </header>
+            <div class="TitleFormSmallSize">
+                <p>
+                    {{ Form.Title }}
+                </p>
+            </div>
+            <div class="modal fade" id="ModalMessageFormQuiestion" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title text-warning">
+                                توجه
+                            </h4>
+                            <i class="fa fa-exclamation-triangle mt-2 fa-2x text-warning"></i>
+                        </div>
+                        <div class="modal-body">
+                            <p class="font-weight-bold">در صورت رفتن به سوال بعد امکان برگشت به سوال قبل را ندارید .</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">متوجه شدم</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="ModalMessageFormPage" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title text-warning">
+                                توجه
+                            </h4>
+                            <i class="fa fa-exclamation-triangle mt-2 fa-2x text-warning"></i>
+                        </div>
+                        <div class="modal-body">
+                            <p class="font-weight-bold">در صورت رفتن به صفحه بعد امکان برگشت به صفحه قبل را ندارید .</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">متوجه شدم</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ContainerForm" class="col-sm-12 col-md-10 col-lg-9 carousel-inner">
+                <!-- Form -->
+                <div class="d-none">
+                    <ul class="carousel-indicators" id="Slider_Pages_Items" dir="ltr">
+                        <!-- Items Slider -->
+                    </ul>
+                    <a class="carousel-control-prev" href="#ContainerBox" data-slide="prev">
+                        <span class="carousel-control-prev-icon">
+                            <i class="fa fa-angle-left"></i>
+                        </span>
+                    </a>
+                    <a class="carousel-control-next" href="#ContainerBox" data-slide="next">
+                        <span class="carousel-control-next-icon">
+                            <i class="fa fa-angle-right"></i>
+                        </span>
+                    </a>
+                </div>
+                <!-- Page -->
+            </div>
+            <div class="TimeFormFixed">
+                <span TimerCounterDown title="تا پایان فرم" TodateTimer="{{ Form.GetTimeEndForm }}"></span>
+            </div>
+            <div class="ContainerBtnsForm">
+                {% if Form.Type == 'Customize' %}
+                    <div>
+                        {% if Form.GetConfigForm.ShowAllPage == 'false' %}
+                            <button class="BtnStyle_1_OutLine" id="BtnPreVious">قبلی</button>
+                        {% endif %}
+                    </div>
+                    {% if Form.GetConfigForm.ShowAllPage == 'false' %}
+                        <div class="ContainerPagination">
+                            <span> صفحه </span><span id="CounterPaginationPage" class="font-weight-bold"> 1 </span>
+                            <span>از</span>
+                            <span id="AllCountPaginationPage"></span>
+                        </div>
+                    {% else %}
+                        <div class="ContainerPagination" dir="rtl">
+                            <span id="AllCountPaginationPage"></span>
+                            صفحه
+                        </div>
+                    {% endif %}
+                    <div>
+                        {% if Form.GetConfigForm.ShowAllPage == 'true' %}
+                            <button class="BtnStyle_5" id="BtnSubmit">ثبت</button>
+                        {% else %}
+                            <button class="BtnStyle_1" id="BtnNext">بعدی</button>
+                            <button class="BtnStyle_5 d-none" id="BtnSubmit">ثبت</button>
+                        {% endif %}
+                    </div>
+                {% elif Form.Type == 'Quiz' %}
+                    <div>
+                        {% if Form.GetConfigForm.ShowAllQuestions == 'false' %}
+                            <button class="BtnStyle_1_OutLine" id="BtnPreVious">قبلی</button>
+                        {% endif %}
+                    </div>
+                    {% if Form.GetConfigForm.ShowAllQuestions == 'false' %}
+                        <div class="ContainerPagination" id="ContainerPagination">
+                            <span>سوال</span> <span id="CounterPaginationQuestion" class="font-weight-bold"> 1 </span>
+                            <span>از</span>
+                            <span id="AllCountPaginationQuestion"></span>
+                        </div>
+                    {% else %}
+                        <div class="ContainerPagination" id="ContainerPagination" dir="rtl">
+                            <span id="AllCountPaginationQuestion"></span>
+                            سوال
+                        </div>
+                    {% endif %}
+                    <div>
+                        {% if Form.GetConfigForm.ShowAllQuestions == 'true' %}
+                            <button class="BtnStyle_5" id="BtnSubmit">ثبت</button>
+                        {% else %}
+                            <button class="BtnStyle_1" id="BtnNext">بعدی</button>
+                            <button class="BtnStyle_5 d-none" id="BtnSubmit">ثبت</button>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block Js %}
+    <script>
+        let _ID_FORM = '{{ Form.ID_FORM }}'
+    </script>
+    {% if RecordSubmited == False %}
+        {% if Form.AccessShowForm == True %}
+            <script src="/Assets/FormSaz/Js/ModelsBase.js"></script>
+            <script src="/Assets/FormSaz/Js/FormQuiz/ModelsQuiz.js"></script>
+            <script>
+                function ControlSettingsMenu_For_Element() {
+                }
+
+                function CreateTitleSectionStylesSettings() {
+                }
+            </script>
+            <script>
+                // Important
+                let TYPECREATEMODELS = 'Record'
+
+                let _Form = JSON.parse('{{ Form_JSON|escapejs }}')
+                let _ConfigForm = JSON.parse(_Form.GetConfig)
+                _ID_FORM = _Form.ID_FORM
+                let _TypeForm = '{{ Form.Type }}'
+                let ToTimeEndForm = '{{ Form.GetTimeEndForm }}'
+                // Initial First Elements //
+                let FORM = new FORM_BASE(_Form)
+                FORM.Config.ConfigSettings = _ConfigForm
+
+   
+
+                {% for Page in Form.GetPages %}
+                    var __Page = new PAGE_ELEMENT('Record')
+                    var __PageJSON = JSON.parse('{{ Page.GetJSON|escapejs }}')
+                    __Page.id = __PageJSON.ID_Element
+                    __Page.Config.ConfigSettings = __PageJSON.Config
+                    __Page.Style.StyleSettings = __PageJSON.Style
+                    __Page.Config.__Load_Config()
+                    __Page.Style.__Load_Styles()
+                    for (let Element of __PageJSON.GetElementsCLASS_JSON) {
+                        CreateElement(Element)
+                    }
+                {% empty %}
+                    new PAGE_ELEMENT()
+                {% endfor %}
+
+            </script>
+            <script src="/Assets/Js/ViewForm/index.js"></script>
+        {% endif %}
+    {% endif %}
+{% endblock %}

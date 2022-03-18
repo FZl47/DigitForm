@@ -1,0 +1,134 @@
+{% load FilterTags %}
+
+<div id="ContainerMenuHamburger" class="MenuIsClose">
+    {% with ListItemsMobile|ConvertStringToList_Str as ListItems %}
+        <!-- Menu Mobile -->
+        <div id="ContentMenuHamburger">
+            <div class="TitleDigitForm">دیجیت فرم</div>
+            <div class="text-left">
+                <div class="CotnainerBtnUserBase">
+                    {% if ListItems|ValInList:'BtnChangeTheme' %}
+                        <div class="ContainerBtnChangeThemeMenuBase">
+                            <i class="fa fa-moon" id="BtnChangeThemeMenu"></i>
+                        </div>
+                    {% endif %}
+                    {% if User == None %}
+                        <a href="/User/LoginRegister" class="BtnHeaderBase BtnHeaderBaseUser">
+                            <i class="fa fa-sign-in"></i>
+                        </a>
+                    {% else %}
+                        <a href="/User/Panel" class="BtnHeaderBase BtnHeaderBaseUser IconUserBase"
+                           title="{{ User }}">
+                            <i class="fa fa-user"></i>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="BtnsHeaderMenu">
+                {% for Item in ListItems %}
+                    {% if Item == 'Home' %}
+                        <a href="/" class="BtnHeaderBase">
+                            خانه
+                        </a>
+                    {% elif Item == 'CreateForm' %}
+                        <a href="/User/Panel?CreateForm" class="BtnHeaderBase">
+                            ساخت فرم
+                        </a>
+                    {% elif Item == 'Learn' %}
+                        <a href="/Learn" class="BtnHeaderBase">
+                            اموزش
+                        </a>
+                    {% elif Item == 'FAQ' %}
+                        <a href="/#FAQ" class="BtnHeaderBase">
+                            سوالات متداول
+                        </a>
+                    {% elif Item == 'AboutUs' %}
+                        <a href="/#AboutUs" class="BtnHeaderBase">
+                            درباره ما
+                        </a>
+                    {% elif Item == 'ContactUs' %}
+                        <a href="/ContactUs" class="BtnHeaderBase">
+                            تماس با ما
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endwith %}
+</div>
+<header Place="{{ Place|NoneVal:'Home' }}" class="HeaderBase" id="HeaderBase" Fixed="{{ Fixed|NoneVal:'false' }}">
+    {% with ListItems|ConvertStringToList_Str as ListItems %}
+        <div class="ContentHeaderBaseMobile d-lg-none">
+            <div class="ContianerIconHamburgerMenu">
+                <img src="/Assets/Img/Blobs/Blob_5.jpg" alt="Blobk Icon Menu">
+                <i id="IconHamburgerMenu" class="fa fa-bars"></i>
+            </div>
+            <div class="ContentLogoUserHeaderBaseMobile">
+                {% comment %}{% if User != None %}
+                    <a href="/User/Panel" class="ColorBase">
+                        <i class="fa fa-user"></i>
+                    </a>
+                {% endif %}{% endcomment %}
+                <img src="/Assets/Img/Logo/Logo.jpg" alt="Logo">
+            </div>
+        </div>
+        <div class="ContentHeaderBase d-none d-lg-flex">
+            <div class="BtnsHeaderBase">
+                {% for Item in ListItems %}
+                    {% if Item == 'Home' %}
+                        <a href="/" class="BtnHeaderBase">
+                            خانه
+                        </a>
+                    {% elif Item == 'CreateForm' %}
+                        <a href="/User/Panel?CreateForm" class="BtnHeaderBase BtnStyle_11 p-2">
+                            ساخت فرم
+                        </a>
+                    {% elif Item == 'Learn' %}
+                        <a href="/Learn" class="BtnHeaderBase">
+                            اموزش
+                        </a>
+                    {% elif Item == 'FAQ' %}
+                        <a href="/#FAQ" class="BtnHeaderBase">
+                            سوالات متداول
+                        </a>
+                    {% elif Item == 'AboutUs' %}
+                        <a href="/#AboutUs" class="BtnHeaderBase">
+                            درباره ما
+                        </a>
+                    {% elif Item == 'ContactUs' %}
+                        <a href="/ContactUs" class="BtnHeaderBase">
+                            تماس با ما
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div>
+                {% for Item in ListItems %}
+                    {% if Item == 'User' %}
+                        <div class="CotnainerBtnUserBase">
+                            {% if User == None %}
+                                <a href="/User/LoginRegister" class="BtnHeaderBase BtnHeaderBaseUser">
+                                    <i class="fa fa-sign-in"></i>
+                                </a>
+                            {% else %}
+                                <a href="/User/Panel" class="BtnHeaderBase BtnHeaderBaseUser IconUserBase"
+                                   title="{{ User }}">
+                                    <i class="fa fa-user"></i>
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% elif Item == 'Logo' %}
+                        <div class="ContainerLogoBase">
+                            <img src="/Assets/Img/Logo/Logo.jpg" alt="Logo" class="LogoBase">
+                        </div>
+                    {% elif Item == 'BtnChangeTheme' %}
+                        <div class="ContainerBtnChangeTheme">
+                            <i class="fa fa-moon" id="BtnChangeTheme"></i>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endwith %}
+</header>
+

@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=no">
+    <meta name="theme-color" content="#00f0cf"/>
+    <link rel="icon" href="/Assets/Img/Logo/Logo.jpg">
+    <link rel="stylesheet" href="/Assets/BootStrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/Assets/Css/Base/Base/Index.css">
+    <link rel="stylesheet" href="/Assets/FontAwesome/css/all.css">
+
+    <link rel="stylesheet" href="/Assets/Css/Base/Header/index.css">
+    <link rel="stylesheet" href="/Assets/Css/Base/Footer/index.css">
+
+    <title>
+        شما به این صفحه دسترسی ندارید - دیجیت فرم
+    </title>
+
+    <style>
+        body {
+            background: #ffffff;
+        }
+
+        .Container {
+            text-align: center;
+            margin: auto;
+            margin-top: 80px;
+        }
+
+        .Container img {
+            width: 85%;
+        }
+
+        .Container p {
+            margin: 0;
+            font-family: KalameBlack;
+            font-size: 270%;
+            color: var(--Compl-Black);
+        }
+
+    </style>
+
+</head>
+<body>
+{% include 'Base/Header/Header.html' with Fixed='true' Place='Other' ListItems='Home,CreateForm,Learn,FAQ,AboutUs,ContactUs,Logo' ListItemsMobile='CreateForm,Learn,FAQ,AboutUs,ContactUs,Home' %}
+<div class="Container col-12 col-md-10 col-lg-6 col-xl-5">
+    <img src="/Assets/Img/Errors/Err_403.jpg" alt="Image 403">
+    <p>
+        شما به این صفحه دسترسی ندارید !<a href="/"> خانه </a>
+    </p>
+</div>
+{% include 'Base/Footer/index.html' %}
+<script src="/Assets/Js/Base/Index.js"></script>
+<script>
+    // Menu Hamburger
+    let ContainerMenuHamburger = document.getElementById('ContainerMenuHamburger')
+    if (ContainerMenuHamburger != null) {
+        SetTouchPadOnElement(ContainerMenuHamburger, 'Width', {'Direction': 'Ltr', 'Min': '0', 'Max': '240px'})
+    }
+    let IconHamburgerMenu = document.getElementById('IconHamburgerMenu')
+    if (IconHamburgerMenu != null) {
+        IconHamburgerMenu.addEventListener('click', function () {
+            OpenMenuHamburger(ContainerMenuHamburger)
+        })
+    }
+
+    let HeaderBase = document.getElementById('HeaderBase')
+    if (HeaderBase) {
+        if (HeaderBase.getAttribute('Fixed') == 'true') {
+            SetHeaderFiexd()
+            document.body.onscroll = function () {
+                SetHeaderFiexd()
+            }
+        }
+    }
+
+    function SetHeaderFiexd() {
+        if (window.scrollY > window.innerHeight / 3) {
+            HeaderBase.classList.add('HeaderBaseFixed')
+        } else {
+            HeaderBase.classList.remove('HeaderBaseFixed')
+        }
+    }
+</script>
+</body>
+</html>

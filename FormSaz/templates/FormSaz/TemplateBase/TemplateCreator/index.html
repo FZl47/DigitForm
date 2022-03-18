@@ -1,0 +1,174 @@
+{% load static %}
+
+<div id="ContainerCreatingForm" class="d-none">
+    <div class="Shape_Header_ContainerCreating"></div>
+    <div id="ContainerDescriptionCreatingForm" class="ContainerDescriptionCreatingForm d-none">
+        <h1 class="Title_ContainerCreating">در حال ساخت اجزای فرم
+            <span class="AnimationLoadingDots"></span>
+        </h1>
+        <p class="PleaseWait_ContainerCreating">لطفا منتظر بمانید</p>
+        <img class="col-8 col-sm-7 col-md-5 col-lg-4" id="Gif_Loading_CreateElements"
+             src="{% static 'FormSaz/Image/Create/Gif_Creating_Light.gif' %}"
+             alt="Loading . . . Creating Elements" loading="lazy">
+    </div>
+    <div id="ContainerDescriptionCreatedForm" class="ContainerDescriptionCreatedForm d-none">
+        <div class="text-center">
+            <h4 class="Title_ContainerCreated"> اجزای فرم شما با موفقیت ساخته شد
+                <i class="far fa-check-circle"></i>
+            </h4>
+            <div class="Container_CodeFormCreated">
+                <b>{{ Form.ID_FORM }}</b><span> : ایدی فرم</span>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <div class="BtnsAction_ContainerCreating">
+            <a id="Link_Show_Form" class="Disabled">
+                <button class="BtnViewForm_ContainerCreating">
+                    <i class="far fa-eye"></i>
+                    مشاهده فرم
+                </button>
+            </a>
+            <a id="Link_Go_To_Panel_User" class="Disabled">
+                <button class="BtnPanelUser_ContainerCreating">
+                    <i class="far fa-user"></i>
+                    پنل کاربری
+                </button>
+            </a>
+            <a>
+                <button id="Link_Go_Back_To_Edit" class="BtnHome_ContainerCreating Disabled">
+                    <i class="far fa-edit"></i>
+                    بازگشت به تغییر فرم
+                </button>
+            </a>
+            <a id="Link_Go_To_Home" class="Disabled">
+                <button class="BtnHome_ContainerCreating">
+                    <i class="far fa-home"></i>
+                    خانه
+                </button>
+            </a>
+        </div>
+    </div>
+    <p class="TextDesForm_Footer_ContainerCreating">شما میتوانید فرم های ساخته شده را در پنل کاربری خود مشاهده
+        کنید .</p>
+    <div class="Shape_Footer_ContainerCreating"></div>
+</div>
+<div class="Container" id="Container">
+    <div id="ContainerElementsAside">
+        <div class="TitleInputsAside">
+            <p>المان ها</p>
+            <i class="fa fa-cubes"></i>
+        </div>
+        <div class="ElementsAsideButtons">
+            {% if Form.Type == 'Quiz' %}
+                <div class="TitleInputSectionAside">فیلد های امتحانی</div>
+                <button class="InputItemAside" ClickModeTag="QUESTION_DESCRIPTIVE">سوال تشریحی</button>
+                <button class="InputItemAside" ClickModeTag="QUESTION_TEST">سوال تستی</button>
+                <button class="InputItemAside" ClickModeTag="FIELD_NAMEANDFAMILY">فیلد نام و نام خانوادگی</button>
+                <button class="InputItemAside" ClickModeTag="FIELD_NATIONALCODE">فیلد کد ملی</button>
+                <button class="InputItemAside" ClickModeTag="FIELD_PHONENUMBER">فیلد شماره موبایل</button>
+                <button class="InputItemAside" ClickModeTag="FIELD_EMAIL">فیلد ایمیل</button>
+            {% endif %}
+            <div {% if Form.Type != 'Customize' %}class="collapse" id="ContainerBtnsCustomizeCreateElement" {% endif %}>
+                <div class="TitleInputSectionAside">رسانه و متن ها</div>
+                <button class="InputItemAside" ClickModeTag="ELEMENT_BOX"> باکس</button>
+                <button class="InputItemAside" ClickModeTag="ELEMENT_LARGE_TITLE"> عنوان بزرگ</button>
+                <button class="InputItemAside" ClickModeTag="ELEMENT_MEDIUM_TITLE"> عنوان متوسط</button>
+                <button class="InputItemAside" ClickModeTag="ELEMENT_SMALL_TITLE"> عنوان کوچک</button>
+                <button class="InputItemAside" ClickModeTag="ELEMENT_TEXT"> متن</button>
+                <button class="InputItemAside" ClickModeTag="ELEMENT_VIDEO">ویدئو</button>
+                <div class="NoteInputItemAside">
+                    <p>توجه کنید حجم ویدئو باید کمتر از 12 مگابایت باشد .</p>
+                    <i class="fa fa-exclamation-triangle"></i>
+                </div>
+                <button class="InputItemAside" ClickModeTag="ELEMENT_IMAGE">عکس</button>
+                <div class="NoteInputItemAside">
+                    <p>توجه کنید حجم عکس باید کمتر از 1 مگابایت باشد .</p>
+                    <i class="fa fa-exclamation-triangle"></i>
+                </div>
+                <button class="InputItemAside" ClickModeTag="ELEMENT_AUDIO">صدا</button>
+                <div class="NoteInputItemAside">
+                    <p>توجه کنید حجم صدا باید کمتر از 5 مگابایت باشد .</p>
+                    <i class="fa fa-exclamation-triangle"></i>
+                </div>
+                <div class="TitleInputSectionAside">اینپوت ها</div>
+                <button class="InputItemAside" ClickModeInput="CHAR"> متن کوتاه</button>
+                <button class="InputItemAside" ClickModeInput="TEXT">متن بزرگ</button>
+                <button class="InputItemAside" ClickModeInput="NUMBER">عدد</button>
+                <button class="InputItemAside" ClickModeInput="EMAIL">ایمیل</button>
+                <button class="InputItemAside" ClickModeInput="PASSWORD">رمز</button>
+                <button class="InputItemAside" ClickModeInput="TIME">زمان</button>
+                <button class="InputItemAside" ClickModeInput="DATE">تاریخ</button>
+                <button class="InputItemAside" ClickModeInput="CHECKBOX">چک باکس</button>
+                <button class="InputItemAside" ClickModeInput="RADIO">رادیو</button>
+                <button class="InputItemAside" ClickModeInput="IMAGE">عکس</button>
+                <button class="InputItemAside" ClickModeInput="FILE">فایل</button>
+            </div>
+            {% if Form.Type != 'Customize' %}
+                <button id="BtnShowMoreBtnsCreateElementCustomize" TypeBtn="Less"
+                        data-target="#ContainerBtnsCustomizeCreateElement"
+                        data-toggle="collapse">
+                    بیشتر
+                    <i class="fa fa-plus-circle"></i>
+                </button>
+            {% endif %}
+        </div>
+    </div>
+    <main>
+        <div id="ContainerBox" FullSize="true" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="ContainerInfoAndSettingsForm col-12">
+                <div class="ContainerBtnMenuElements">
+                    <button id="BtnMenuElements">
+                        <i class="fas fa-grip-vertical"></i>
+                    </button>
+                </div>
+                <p id="TitleInfoForm">{{ Form.Title }}</p>
+                <div>
+                    <i class="fa fa-sun" id="BtnChangeTheme"></i>
+                    <div class="BtnSettingsForm d-inline-block" onclick="FORM.SettingsForm()">
+                        <p>تنظیمات</p>
+                        <i class="fa fa-cogs"></i>
+                    </div>
+                </div>
+            </div>
+            {% if Form.Type == 'Customize' %}
+                <div class="ButtonCreateNewPage" id="ButtonCreateNewPage">
+                    <i class="fa fa-plus"></i>
+                    <p>ایجاد برگه </p>
+                </div>
+            {% endif %}
+            <div id="ContainerForm" class="col-sm-12 col-md-10 col-lg-9 carousel-inner">
+                <!-- Form -->
+                <div>
+                    <ul class="carousel-indicators" id="Slider_Pages_Items" dir="ltr">
+                        <!-- Items Slider -->
+                    </ul>
+                    <a class="carousel-control-prev" href="#ContainerBox" data-slide="prev">
+                        <span class="carousel-control-prev-icon">
+                            <i class="fa fa-angle-left"></i>
+                        </span>
+                    </a>
+                    <a class="carousel-control-next" href="#ContainerBox" data-slide="next">
+                        <span class="carousel-control-next-icon">
+                            <i class="fa fa-angle-right"></i>
+                        </span>
+                    </a>
+                </div>
+                <!-- Page -->
+            </div>
+        </div>
+        <div class="ContainerSettingsElement" State="Close">
+            <div class="IconCloseMenuSettings" onclick="ControlSettingsMenu_For_Element('Close')">
+                <i class="far fa-arrow-from-right"></i>
+                <p>بستن</p>
+            </div>
+            <div class="ContainerItemsSettings" id="ContainerItemsSettings">
+                <!-- Items Settings -->
+            </div>
+        </div>
+    </main>
+</div>
+<div class="text-left mt-4">
+    <button id="BtnSubmitForm">ذخیره</button>
+</div>
+

@@ -1,0 +1,191 @@
+body {
+    background: var(--Compl-Black);
+}
+
+.ContainerContentHeader {
+    background: #393939;
+    box-shadow: 0 3px 7px rgb(34 34 34 / 50%);
+    color: #ffffff;
+}
+
+.ContainerContentForm {
+    color: #ffffff;
+    background: #383838;
+    box-shadow: 0 12px 20px rgba(34, 34, 34, 0.2);
+}
+
+.ContainerHeaderContentForm {
+    background: #404040;
+    box-shadow: 0 3px 4px rgba(51, 51, 51, 0.6);
+}
+
+.ContainerTitle {
+    color: var(--ColorBase);
+}
+
+
+.BtnHeader {
+    color: #ffffff;
+}
+
+.InfoForm {
+    background: #333333;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(47, 47, 47, .2);
+}
+
+.InfoForm h5 {
+    color: var(--ColorBase);
+}
+
+.InfoForm > div > div {
+    margin: 10px 0;
+    padding: 8px;
+    text-align: right;
+    border-radius: 5px;
+    background: rgba(238, 238, 238, 0.08);
+    box-shadow: none;
+}
+
+.InfoForm > div > div p:first-child {
+    font-size: 75%;
+    color: #dddddd;
+    margin-left: 5px;
+    width: 85px;
+}
+
+.InfoForm > div > div p:last-of-type {
+    color: #ffffff;
+    font-size: 90%;
+    margin-left: 5px;
+}
+
+.ContainerSettingsForm {
+    background: #333333;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(47, 47, 47, .2);
+}
+
+.TitleCotnaienrSettingsForm {
+    color: var(--ColorBase);
+}
+
+.ItemSettingsForm {
+    background: rgba(56, 56, 56, 0.1);
+    box-shadow: none;
+}
+
+.ItemSettingsForm h5 {
+    color: #dddddd;
+}
+
+.ItemSettingsForm input {
+    background: #cccccc;
+}
+
+.ItemSettingsForm textarea {
+    background: #cccccc;
+}
+
+.CONTAINER_INPUT_RADIO p {
+    color: #333333;
+}
+
+.CONTAINER_INPUT_RADIO input {
+    background: #cccccc;
+}
+
+.ItemSettingsForm input:focus {
+    box-shadow: 0 0 8px var(--ColorBase);
+}
+
+.ItemSettingsForm textarea:focus {
+    box-shadow: 0 0 8px var(--ColorBase);
+}
+
+.Record:hover {
+    border: 2px solid #ffffff !important;
+}
+
+.Record_More {
+    display: inline-block;
+    width: 150px;
+    border-left: none;
+    color: var(--ColorBase);
+    transition: all .15s;
+}
+
+.Record_More:hover {
+    color: #00ffb5;
+    transform: translateX(-10px);
+}
+
+
+.TitleSectionRecord {
+    font-size: 80%;
+    color: #aaaaaa;
+    text-align: right;
+}
+
+.ValueSectionRecord {
+    font-size: 95%;
+    color: #f5f5f5;
+    margin-top: 4px !important;
+}
+
+
+.ContainerRecordsForm {
+    background: #333333;
+    box-shadow: 0 5px 15px rgba(47, 47, 47, .2);
+}
+
+.ContainerViewRecordsForm {
+    background: #333333;
+    box-shadow: 0 5px 15px rgba(47, 47, 47, .2);
+}
+
+.ContainerLinkForm {
+    background: #454545;
+    box-shadow: 0 3px 4px #323232;
+    display: inline-block;
+    direction: ltr;
+    padding: 7px 5px;
+    border-radius: 5px;
+}
+
+.ContainerLinkForm p {
+    margin: 0;
+}
+
+.ContainerLinkForm button {
+    width: 100px;
+    padding: 8px 5px;
+    border: none;
+    outline: none;
+    border-radius: inherit;
+    background: #ffffff!important;
+}
+
+.ContainerLinkForm button p {
+    display: inline-block;
+    color: #00c8ab;
+}
+
+.ContainerLinkForm button:active {
+    transform: scale(.97);
+}
+
+.ContainerLinkForm button i {
+    color: #00c8ab;
+}
+
+.ContainerLinkForm > div {
+    display: inline-block;
+    padding: 7px 5px;
+    border-radius: 4px;
+    margin-left: 4px;
+    background: inherit;
+    box-shadow: inset 2px 2px 4px rgba(51, 51, 51, 0.9), inset -3px -3px 3px rgba(51, 51, 51, 0.2);
+}

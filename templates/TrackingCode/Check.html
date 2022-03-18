@@ -1,0 +1,114 @@
+{% extends 'Base/BaseTemplate.html' %}
+{% load FilterTags %}
+{% load static %}
+
+{% block Title %}
+    نتیجه -  {{ Form.Title }}
+{% endblock %}
+
+
+{% block Link %}
+    <link rel="stylesheet" href="{% static 'Css/Base/Header/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/Base/Footer/index.css' %}">
+{% endblock %}
+
+{% block Css %}
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+
+        #ImageDesignBackground {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: auto;
+            z-index: -1;
+            opacity: .8;
+            transform: rotate(180deg);
+        }
+
+        .Cotnainer {
+            height: 400px;
+            background: #ffffff;
+            margin: auto;
+            margin-top: 120px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(215, 215, 215, 0.3);
+            position: relative;
+        }
+
+        .Cotnainer::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.6);
+            z-index: -1;
+            transform: rotate(-3deg);
+            border-radius: inherit;
+        }
+
+        .Cotnainer::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            z-index: -1;
+            transform: rotate(-6deg);
+            border-radius: inherit;
+        }
+
+        .ContainerMessageEmpty {
+            text-align: center;
+        }
+
+        .ContainerMessageEmpty p {
+            font-size: 110%;
+            color: #ec4c50;
+        }
+
+        .ContainerMessage {
+            height: 70%;
+            overflow: auto;
+        }
+
+        .TextMesssage {
+            font-size: 95%;
+            color: #555555;
+        }
+
+
+    </style>
+{% endblock %}
+
+
+{% block Content %}
+    {% include 'Base/Header/Header.html' with Fixed='true' Place='Other' ListItems='Home,CreateForm,Learn,AboutUs,ContactUs,User,Logo' ListItemsMobile='CreateForm,Learn,AboutUs,ContactUs,Home' %}
+    <img src="/Assets/Img/Design/ImageDesignBackground_2.jpg" alt="Image Background Design" id="ImageDesignBackground">
+    <div class="Cotnainer col-12 col-md-6 col-lg-4">
+        <h4 class="text-center pt-3">{{ Form.Title|truncatechars:30 }}</h4>
+        <h2 class="p-1 FontFamily_KalameBalack">نتیجه :</h2>
+        {% if Record.Message == None %}
+            <div class="ContainerMessageEmpty">
+                <img src="/Assets/Img/Design/ImageBoxEmpty_1.jpg" alt="Box Empty" class="ImageBoxEmpty">
+                <p>تاکنون چیزی ثبت نشده است </p>
+            </div>
+        {% else %}
+            <div class="ContainerMessage px-4 mt-3">
+                <p class="TextMesssage">{{ Record.Message }}</p>
+                <div class="text-left Small" title="{{ Record.DateTimeSubmitMessage }}">
+                    <p class="d-inline-block">{{ Record.GetTimePastMessage }}</p>
+                    <i class="far fa-clock AnimationRotateClock"></i>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    {% include 'Base/Footer/index.html' %}
+{% endblock %}

@@ -1,0 +1,284 @@
+/* Dark Mode */
+
+body {
+    background: var(--Compl-Black);
+}
+
+#ContainerElementsAside {
+    background: var(--Compl-Black);
+    box-shadow: -4px 2px 10px rgba(17, 17, 17, 0.2);
+}
+
+#ContainerElementsAside::before {
+    display: none;
+}
+
+#ContainerElementsAside::after {
+    display: none;
+}
+
+.TitleInputsAside p {
+    color: var(--ColorBase);
+}
+
+.TitleInputSectionAside {
+    color: #fafafa;
+}
+
+.InputItemAside {
+    color: #eeeeee;
+}
+
+.InputItemAside:active {
+    background: var(--ColorBase);
+    color: #ffffff;
+}
+
+.InputItemAside:hover {
+    background: var(--ColorBase);
+    color: #ffffff;
+    box-shadow: none;
+}
+
+.InputItemAside:focus {
+    background: var(--ColorBase);
+    color: #ffffff;
+    box-shadow: none;
+}
+
+#ContainerForm {
+    box-shadow: 0 0 15px rgba(17, 17, 17, 0.7);
+}
+
+.ContainerInfoAndSettingsForm {
+    background: var(--Compl-Black);
+    box-shadow: 0 4px 8px rgba(34, 34, 34, 0.5);
+    color: #ffffff;
+}
+
+.ContainerSettingsElement {
+    background: var(--Compl-Black);
+    box-shadow: 0 0 15px rgba(24, 24, 24, 0.7);
+}
+
+.TitleLabelSettings {
+    border-radius: 0;
+    background: rgba(37, 37, 37, 0.4);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    color: var(--Compl-GreenLight);
+}
+
+.TitleLabelSettings i {
+    color: var(--Compl-GreenLight);
+}
+
+.ItemSettings p {
+    color: #eeeeee;
+}
+
+.ItemSettings {
+    border-bottom: 1px dashed #696969;
+}
+
+.ItemSettings input {
+    background: #414141;
+    color: #ffffff;
+}
+
+.ItemSettings textarea {
+    background: #414141;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+.ItemSettings input:focus {
+    background: #585858;
+}
+
+.ItemSettings textarea:focus {
+    background: #585858;
+}
+
+.ItemSettings select {
+    color: #ffffff !important;
+    background: #333333 !important;
+}
+
+.ContainerInfoElementSettings {
+    background: #2f2f2f;
+    box-shadow: 0 5px 5px #272727;
+}
+
+.ContainerInfoElementSettings p {
+    color: #ffffff;
+}
+
+.ContainerNoteItemSettings p {
+    color: var(--Compl-Yellow);
+}
+
+.CONTAINER_INPUT_RADIO:not(.ContainerContentBlur .CONTAINER_INPUT_RADIO) {
+    background: #444444;
+    box-shadow: 0 1px 5px rgba(11, 11, 11, 0.3);
+}
+
+.ContainerFooter {
+    box-shadow: none;
+    border-top: 1px solid #333333;
+}
+
+.ContainerBlur {
+    background: var(--Compl-Black);
+    box-shadow: 0 0 0 10000000px rgba(0, 0, 0, 0.4);
+}
+
+.TitleCotnaienrSettingsForm {
+    color: var(--ColorBase);
+}
+
+.ItemSettingsForm h5 {
+    color: #ffffff;
+}
+
+.ItemSettingsForm span {
+    color: #cccccc;
+}
+
+.ItemSettingsForm input:not([type=radio]) {
+    background: #555555;
+    color: #ffffff !important;
+    box-shadow: 0 1px 3px #666666 !important;
+    border: 1px solid #999999;
+}
+
+.ItemSettingsForm textarea {
+    background: #555555;
+    color: #ffffff !important;
+    box-shadow: 0 1px 3px #666666 !important;
+    border: 1px solid #999999;
+}
+
+.ItemSettingsForm input:focus {
+    background: #656565;
+}
+
+.ItemSettingsForm textarea:focus {
+    background: #656565;
+}
+
+#ContainerCreatingForm {
+    background: var(--Compl-Black);
+}
+
+.Title_ContainerCreated {
+    color: #ffffff;
+}
+
+.Title_ContainerCreating {
+    color: #ffffff;
+}
+
+.PleaseWait_ContainerCreating {
+    color: var(--Compl-Yellow);
+}
+
+.BtnPanelUser_ContainerCreating {
+    background: var(--Compl-Black);
+}
+
+.BtnsAction_ContainerCreating a button {
+    color: #eeeeee;
+}
+
+.Shape_Header_ContainerCreating {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 100px solid #FFA7A3;
+    position: relative;
+}
+
+.Shape_Header_ContainerCreating:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -60px;
+    top: -100px;
+    border-left: 50px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 120px solid rgba(255, 167, 163, 0.7);
+    z-index: -1;
+}
+
+
+.Shape_Footer_ContainerCreating {
+    width: 26vmin;
+    height: 24vmin;
+    position: absolute;
+    background: rgba(50, 255, 194, 0.5);
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 0 100% 0 0;
+    box-shadow: 5px -1px 18px rgba(42, 251, 169, 0.1);
+}
+
+.Shape_Footer_ContainerCreating:after {
+    content: "";
+    width: calc(100% - 25px);
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(40deg, rgba(6, 255, 220, 0.65), rgba(65, 255, 140, 0.82));
+    border-radius: inherit;
+}
+
+.Shape_Footer_ContainerCreating:before {
+    content: "";
+    width: calc(100% - 50px);
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(100deg, #3fffce, #23ffe4);
+    border-radius: inherit;
+}
+
+.TextDesForm_Footer_ContainerCreating {
+    color: #bbbbbb;
+}
+
+.TitleContainerInsertElement p {
+    color: #ffffff;
+}
+
+.TitleContainerSectionInsertElements {
+    background: linear-gradient(120deg, var(--ColorBase), var(--Compl-GreenLight) 60%);
+}
+
+.InputItemContainerInsertElement {
+    color: #dddddd;
+}
+
+.InputItemContainerInsertElement:hover {
+    color: #ffffff;
+}
+
+.InputItemContainerInsertElement:active {
+    color: #ffffff;
+}
+
+.InputItemContainerInsertElement:focus {
+    color: #ffffff;
+}
+
+
+#BtnShowMoreBtnsCreateElementCustomize {
+    color: #eeeeee !important;
+}
+
+#BtnMenuElements{
+    color: var(--ColorBase);
+}
