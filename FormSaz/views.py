@@ -1167,7 +1167,7 @@ def SubmitMessageRecord(request, ID_FORM, Record_id):
     raise PermissionDenied
 
 
-# i'dont now why {% csrf_token %} in Template not working so Use @csrf_exempt
+
 @csrf_exempt
 def DeleteRecord(request,ID_FORM,Record_id):
     if request.method == 'POST':
